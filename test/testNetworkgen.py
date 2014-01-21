@@ -17,7 +17,7 @@ class TestNetworkgen(unittest.TestCase):
         
         # initialize
         tree = {0:[]}
-        ng.treeGen(0, 1, tree)
+        tree = ng.generate_tree_network(10, 4, 3)
         #print "\nRESULT"
         #print tree
         self.assertTrue(len(tree) == 10)

@@ -2,6 +2,8 @@ import random
 import os
 import sys
 
+from treeGen import *
+
 dotTemplate = """
 graph graphname {
     %s
@@ -9,16 +11,9 @@ graph graphname {
 """
 
 class NetworkGen(object):
-    def __init__(self, nodes, tree = False, maxBranch = 5):
-        #print tree
-        self.tree = tree
-        self.maxBranch = maxBranch
-        self.numberOfNodes = nodes
-        self.topology = {}
-        
-        self.maxConnection = 5
-        self.defaultMaxValue = 10
-        
+    def __init__(self):
+        pass
+
     def makeSymmetric(self, dictionary):
         """
         Make the input dictionary as symmetric
@@ -59,85 +54,44 @@ class NetworkGen(object):
         r = random.randint(0, maxValue)
         return r
         
-    def getRandomNetwork(self):
-        result = {}
-        for i in range(self.numberOfNodes):
-            # Get the number of neighbor nodes which is bigger than 0
-            n = self.getValue(self.maxConnection)
-            while n == 0:
-                n = self.getValue(self.maxConnection)
-            
-            # [i] excludes the self as an neighboring nodes
-            nodes = self.getNodes(n, [i]) # , self.numberOfNodes)
-            result[i] = nodes
-            
-        result = self.makeSymmetric(result)
-        return result
+    def generate_mesh_network(self, node, width = None, depth = None, max_attempt = 300):
+        pass
         
-    def treeGen(self, index, numberOfCreatedNodes, tree):
-        """
-        generates a tree network with numberOfNodes
-        format -> dictionary
-        {1:[2], 2:[3,4,5], ... }
-        
-        Then run makeSymmetric to get symmetric tree 
-        
-        input: numberOfCreatedNodes is the number of generated nodes so far
-        """
-        #print "INDEX", index 
-        #print "numberOfCreatedNodes", numberOfCreatedNodes
-        #print tree
-        #print "\n"
-        if numberOfCreatedNodes >= self.numberOfNodes:
-            return
+    def generate_tree_network(self, node, width = None, depth = None, max_attempt = 300):
+        if width is None:
+            width = node / 3
+        if depth is None:
+            depth = node / 3
+        tree_gen = TreeGen()
+        tree, result_depth = tree_gen.generate(node, width, depth, max_attempt)
+        if depth > 0:
+            tree = TreeGen.format_converter(tree)
+            tree = self.makeSymmetric(tree)
+            return tree
         else:
-            maxNumberOfNodes = self.numberOfNodes - numberOfCreatedNodes
-            maxBranch = min(self.maxBranch, maxNumberOfNodes)
-            count = random.randint(1, maxBranch)
-            #print "count", count
-            origNumber = numberOfCreatedNodes
-            numberOfCreatedNodes += count 
-            for i in range(count):
-                newIndex = origNumber + i
-                #print "NI", newIndex
-                tree[index].append(newIndex)
-                tree[newIndex] = []
-                
-                # newIndex is the start of the node number
-                self.treeGen(newIndex, numberOfCreatedNodes, tree)
-                numberOfCreatedNodes += len(tree)
-            
-    def fileGen(self, filePath):
-        #print self.tree
-        if self.tree: # Tree structure
-            tree = {0:[]}
-            self.treeGen(0, 1, tree)
-            self.topology = self.makeSymmetric(tree)
-        else:
-            if not self.topology:
-                self.topology = self.getRandomNetwork()
+            raise Exception("Tree not generated with params: node(%d),width(%d),depth(%d)" % (node, width, result_depth))
+            return []
+
+    def generate_tree_file(self, file_path, node, width = None, depth = None, max_attempt = 300):
+        tree = self.generate_tree_network(node, width, depth, max_attempt)
                 
         string = ""
-        for key, value in sorted(self.topology.items()):
+        for key, value in sorted(tree.items()):
             string += "%d: " % key
             for i in value:
                 string += "%d " % i
             string += "\n"
         
-        with open(filePath, "w") as f:
+        with open(file_path, "w") as f:
             f.write(string)
+
+        return tree
             
-    def dotGen(self, filePath = None):
+    def dotGen(self, filePath, tree):
         string = ""
-        
-        #print self.topology
-        if not self.topology:
-            print "ERROR: no self.topology run fileGen first"
-            self.topology = self.getRandomNetwork()
-            assert False
             
         cache = []
-        for key, value in sorted(self.topology.items()):
+        for key, value in sorted(tree.items()):
             for i in value:
                 if sorted((key,i)) not in cache:
                     string += "%d -- %d\n" % (key, i)

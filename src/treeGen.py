@@ -1,15 +1,17 @@
 import random
 import sys
 
+
 class TreeGen:
     def __init__(self): 
         pass
-        
-    def get_depth(self, tree):
+
+    @staticmethod
+    def get_depth(tree):
         last_element = tree[len(tree)-1]
         #print last_element
         parent = last_element[1]
-        depth = 1
+        depth = 0
 
         while parent is not None:
             index = tree.index(filter(lambda x: x[0] == parent, tree)[0])
@@ -34,7 +36,7 @@ class TreeGen:
         current_depth = 1
         parent = 0
         
-        while (count < node_size and current_depth <= depth):
+        while count < node_size and current_depth <= depth:
             width = random.randrange(self.max_width)
             
             if width > 0:
@@ -46,7 +48,7 @@ class TreeGen:
                     count += 1
                 
             index += 1
-            current_depth = self.get_depth(tree)
+            current_depth = TreeGen.get_depth(tree)
                         
             if index < len(tree):
                 parent = tree[index][0]
@@ -55,14 +57,15 @@ class TreeGen:
                 
         return tree, depth
         
-    def generate(self, node_size, max_width, max_depth, max_attempt = 100):
+    def generate(self, node_size, max_width, max_depth, max_attempt = 5):
+        assert node_size > 0
         assert max_depth != 1
         assert max_width != 1
         max_node_size = (max_width**max_depth - 1)/(max_width - 1)
         if max_node_size < node_size:
             print >>sys.stderr, "Increase the width or depth"
-            sys.exit(0)
-        
+            #sys.exit(0)
+            raise Exception("Too much node to create")
         #print max_width
         tree = []
         count = 0
@@ -75,6 +78,52 @@ class TreeGen:
             except Exception, e:
                 count += 1
         return [], 0
+
+    @staticmethod
+    def format_converter(tree):
+        """
+        The tree as an input is the format [(0,None), (1,0)...]
+        This code converts this format into the dictionary tree format
+        {0:[1,2], 1:[3,4] ...}
+        """
+        result = {}
+        for element in tree:
+            node = element[0]
+            parent = element[1]
+            # find the elements in a tree whose parent is this node
+            nodes = filter(lambda x: x[1] == node, tree)
+            if len(nodes):  # When connection is found
+                result[node] = []
+                for n in nodes:
+                    result[node].append(n[0])
+        return result
+
+    @staticmethod
+    def get_two_node_values(range):
+        a = 0
+        b = 0
+        while a == b:
+            a = random.randrange(range)
+            b = random.randrange(range)
+
+        return min(a,b), max(a,b)
+
+    def tree_to_mesh(self, tree, percentage = 0.2):
+        """
+        Given a tree, randomly selects nodes to connect them.
+        The third parameter percentage is % of numbers to be connected.
+        When the number of node is 100, and percentage is 0.2, the 20 nodes are newly connected
+        """
+        node_size = len(tree)
+        additional_node_size = node_size * percentage
+
+        # find unique tuples (in ascending order) up to additional_node_size
+        count = 0
+        node_set = set()
+        while count == additional_node_size:
+            node1, node2 = TreeGen.get_two_node_values(node_size)
+
+
             
 if __name__ == "__main__":
     import unittest

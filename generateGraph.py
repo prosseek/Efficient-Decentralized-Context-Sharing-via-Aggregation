@@ -8,10 +8,13 @@ if __name__ == "__main__":
 
     isTree = False
     name = "tree" if isTree else "mesh"
-    for i in [200, 300, 400, 500]:
+    for i in [20,30,40,50,60,70,80,90,100]:
         numberOfNode = i
-        c = NetworkGen(numberOfNode, tree = isTree, maxBranch = numberOfNode/10)
+        c = NetworkGen()
         text = filePath % (name + str(i))
-        c.fileGen(text)
+        width = 4
+        depth = i
+        tree = c.generate_tree_file(text, i, width=width, depth=depth) # generate 10 nodes tree network
+
         dot = dotPath % (name + str(i))
-        c.dotGen(dot)
+        c.dotGen(dot, tree)
