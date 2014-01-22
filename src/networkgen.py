@@ -54,9 +54,6 @@ class NetworkGen(object):
         r = random.randint(0, maxValue)
         return r
         
-    def generate_mesh_network(self, node, width = None, depth = None, max_attempt = 300):
-        pass
-        
     def generate_tree_network(self, node, width = None, depth = None, max_attempt = 300):
         if width is None:
             width = node / 3
@@ -70,11 +67,19 @@ class NetworkGen(object):
             return tree
         else:
             raise Exception("Tree not generated with params: node(%d),width(%d),depth(%d)" % (node, width, result_depth))
-            return []
+
+    def generate_mesh_file(self, file_path, tree, percentage = 0.3):
+        mesh = TreeGen.tree_to_mesh(tree, percentage)
+        NetworkGen.generate_tree_file_from_tree(file_path, tree)
+        return mesh
 
     def generate_tree_file(self, file_path, node, width = None, depth = None, max_attempt = 300):
         tree = self.generate_tree_network(node, width, depth, max_attempt)
-                
+        NetworkGen.generate_tree_file_from_tree(file_path, tree)
+        return tree
+
+    @staticmethod
+    def generate_tree_file_from_tree(file_path, tree):
         string = ""
         for key, value in sorted(tree.items()):
             string += "%d: " % key
@@ -84,8 +89,6 @@ class NetworkGen(object):
         
         with open(file_path, "w") as f:
             f.write(string)
-
-        return tree
             
     def dotGen(self, filePath, tree):
         string = ""

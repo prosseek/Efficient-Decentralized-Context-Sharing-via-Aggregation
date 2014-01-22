@@ -1,5 +1,6 @@
 import random
 import sys
+import copy
 
 
 class TreeGen:
@@ -108,22 +109,58 @@ class TreeGen:
 
         return min(a,b), max(a,b)
 
-    def tree_to_mesh(self, tree, percentage = 0.2):
+    @staticmethod
+    def get_new_link_set_from_tree(tree, number_of_links):
+        """
+        Given a tree (in a dictionary format), return a set of nodes in a tuple format (FROM, TO)
+        that has `number_of_links` elements
+        """
+        iteration_count = 0
+        node_size = len(tree)
+
+        result = set()
+        while len(result) < number_of_links:
+            iteration_count += 1
+            node1, node2 = TreeGen.get_two_node_values(node_size)
+            if not TreeGen.linked_nodes(tree, node1, node2):
+                result.add((node1, node2))
+
+            if iteration_count > node_size:
+                raise Exception("Too many iterations")
+        return result
+
+    @staticmethod
+    def linked_nodes(tree, node1, node2):
+        """
+        Check if node1 and node2 is connected in tree
+        """
+        if node1 in tree:
+            return node2 in tree[node1]
+        else:
+            raise Exception("node1 (%d) is not in a tree" % node1)
+
+    @staticmethod
+    def tree_to_mesh(tree, percentage = 0.2):
         """
         Given a tree, randomly selects nodes to connect them.
         The third parameter percentage is % of numbers to be connected.
         When the number of node is 100, and percentage is 0.2, the 20 nodes are newly connected
         """
+        assert percentage < 0.6  # Let's make it less than 60%.
         node_size = len(tree)
-        additional_node_size = node_size * percentage
+        additional_node_size = int(node_size * percentage)
 
-        # find unique tuples (in ascending order) up to additional_node_size
-        count = 0
-        node_set = set()
-        while count == additional_node_size:
-            node1, node2 = TreeGen.get_two_node_values(node_size)
+        links = TreeGen.get_new_link_set_from_tree(tree, additional_node_size)
 
+        mesh = copy.deepcopy(tree)
 
+        for link in links:
+            a = link[0]
+            b = link[1]
+            mesh[a].append(b)
+            mesh[b].append(a)
+
+        return mesh
             
 if __name__ == "__main__":
     import unittest

@@ -17,6 +17,7 @@ class TestNetworkgen(unittest.TestCase):
         
         # initialize
         tree = {0:[]}
+        # 10 nodes with maximum width 4 and depth 3
         tree = ng.generate_tree_network(10, 4, 3)
         #print "\nRESULT"
         #print tree
