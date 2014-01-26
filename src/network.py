@@ -70,11 +70,13 @@ class Network(object):
             
     def networkFileParsing(self):
         if self.networkTopology: return self.networkTopology
-        
+
+        #print self.networkFile
         with open(self.networkFile, 'r') as f:
             for l in f:
                 #print l.rstrip()
                 first, rest = getFirstRest(l)
+                #print first, rest
                 self.networkTopology[first] = rest
 
         return self.networkTopology

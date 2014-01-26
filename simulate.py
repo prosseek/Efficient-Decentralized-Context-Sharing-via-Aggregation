@@ -1,7 +1,9 @@
 import sys
 import os.path
 sys.path.insert(0, "./src")
+
 from network import *
+from configuration import *
 
 def getFilePath(inputFile, resultDirectory, ext, name):
     fileName = os.path.split(inputFile)[1]
@@ -56,7 +58,7 @@ def runSimulate(inputFile, singleOnly, resultDirectory = "./"):
         a.write(result)
 
 if __name__ == "__main__":
-    testSampleDirectory = "/Users/smcho/temp/simulation"
+    testSampleDirectory = configuration.getTestSampleDirectory() # "/Users/smcho/temp/simulation"
     dataDirectory = os.path.join(testSampleDirectory, "data")
     outputDirectory = os.path.join(testSampleDirectory, "results")
     singleOnly = True

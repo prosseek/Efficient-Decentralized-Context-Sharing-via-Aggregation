@@ -70,7 +70,7 @@ class NetworkGen(object):
 
     def generate_mesh_file(self, file_path, tree, percentage = 0.3):
         mesh = TreeGen.tree_to_mesh(tree, percentage)
-        NetworkGen.generate_tree_file_from_tree(file_path, tree)
+        NetworkGen.generate_tree_file_from_tree(file_path, mesh)
         return mesh
 
     def generate_tree_file(self, file_path, node, width = None, depth = None, max_attempt = 300):

@@ -8,7 +8,63 @@ class Analyzer(object):
         self.network = networkObject
         self.communications = {}
         self.dbs = {}
-    
+
+    ### These are methods for massive simulation
+    def getFinalPacketNumber(self):
+        """
+        Returns tuple: single, aggregated
+        """
+        singleCount = 0
+        groupCount = 0
+        for n, contents in self.communications.items():
+            total = 0
+            for c in contents:
+                total += len(c[2])
+                for i in c[2]:
+                    if type(i) is Context:
+                        singleCount += 1
+                    elif type(i) is GroupContext:
+                        groupCount += 1
+
+        return singleCount, groupCount
+
+    def dict_avg(self, dict):
+        values = dict.values()
+        #print values
+        if type(values[0]) is list:
+            #print values
+            number_of_cohorts = [i[0] for i in values]
+            pcCount = [i[1] for i in values]
+            return (sum(number_of_cohorts)*1.0/len(number_of_cohorts), sum(pcCount)*1.0/len(pcCount))
+        else:
+            return sum(values)*1.0/len(values)
+
+    def getFinalAccuracy(self):
+        """
+        accuracy is defined by the (recognized number of nodes)/(total number of nodes)
+
+            accuracyDict[i] = (sc + pcCount)
+            accuracyTotalDict[i] = (sc + pcCount + npcCount)
+            accuracy_single_dict[i] = sc
+            accuracy_cohorts_dict[i] = [number_of_cohorts, pcCount]
+        """
+        resultTotal, result, resultSingle, resultCohorts = self.getAccuracy()
+
+        # time count starts from 1, so the information about the final time is stored
+        # in [size] not [size - 1]
+        size = len(result)
+        recognitionTotalRate = self.dict_avg(resultTotal[size])
+        # result[size] # We ignore total, as I don't care about the npcCount
+        recognitionOfSingles = self.dict_avg(resultSingle[size])
+
+        average_number_of_cohorts, average_pc_count = self.dict_avg(resultCohorts[size])
+        return (recognitionTotalRate, recognitionOfSingles, average_pc_count, average_number_of_cohorts)
+
+    def getFinalSpeed(self):
+        #print self.dbs.items()
+        return len(self.dbs.items())
+    ###
+
     def getNodeSize(self):
         return len(self.getNodes())
         
@@ -82,6 +138,7 @@ class Analyzer(object):
 
         # iterate over each time count
         for time_count, dictionary in self.dbs.items():
+            #print time_count
             # n is the node number, contents is the results from the node
             accuracyTotalDict = {}
             accuracyDict = {}
