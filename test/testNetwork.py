@@ -1,13 +1,24 @@
 import unittest
 import sys
+import os.path
 
-sys.path.append("../src")
-
+#print os.path.abspath(".")
+sys.path.append(os.path.abspath("../src"))
+#print sys.path
 from network import *
+from networkAlgorithm import *
 
 class TestNetwork(unittest.TestCase):
     def setUp(self):
         pass
+        
+    def test_getDepth(self):
+        a = Network("testFile/network1.txt")
+        self.assertTrue(a.getDepth() == 6)
+        
+    def test_getMaxNeighbors(self):
+        a = Network("testFile/network1.txt")
+        self.assertEqual(a.getMaxNeighbors(), 3)
         
     def test_getItem(self):
         a = Network("testFile/network1.txt")
@@ -49,6 +60,9 @@ class TestNetwork(unittest.TestCase):
         #print analyzer.getCommuncationCount()
         
     def test_buildHost(self):
+        # import os
+        # print sys.path
+        #print os.path.abspath(".")
         a = Network("testFile/network1.txt")
         #a.buildHost()
         keys = a.hostDict.keys()
@@ -82,5 +96,7 @@ graph graphname {
 }
 """
         self.assertEqual(res, expected)
+        
 if __name__ == "__main__":
+    import os
     unittest.main(verbosity=2)

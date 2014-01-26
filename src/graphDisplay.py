@@ -79,6 +79,6 @@ class GraphDisplay(object):
         plt.show()
         
 if __name__ == "__main__":
-    filePath = "/Users/smcho/code/snapshot/test/testFile/network2.txt"
+    filePath = "../test/testFile/network2.txt"
     g = GraphDisplay(filePath)
     g.show()

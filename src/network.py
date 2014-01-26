@@ -5,6 +5,7 @@ import re
 from host import *
 from util import *
 from analyzer import *
+from networkAlgorithm import *
 
 JYTHON = False
 try:
@@ -56,6 +57,10 @@ class Network(object):
     def getNodes(self):
         return self.hostDict.keys()
         
+    def getNumberOfEdges(self):
+        r = self.getEdges()
+        return len(r)
+        
     def getEdges(self):
         result = set()
         for hostId, object in self.hostDict.items():
@@ -64,6 +69,28 @@ class Network(object):
                 result.add(r)
         #print result
         return list(result)
+        
+    def getMaxPaths(self):
+        d = NetworkAlgorithm()
+        d.read(self.networkFile)
+        res = d.findLongestShortestPath()
+        return res
+        
+    def getDepth(self):
+        res = self.getMaxPaths()
+        return len(max(res, key=len))
+        
+    def getWidth(self):
+        return self.getMaxNeighbors()
+        
+    def getMaxNeighbors(self):
+        """
+        The width of a graph is defined by maximum number of neighbors
+        """
+        n = []
+        for i in self.getNodes():
+            n.append(len(self.getNeighbors(i)))
+        return max(n)
         
     def getNeighbors(self, nodeId):
         return self.networkTopology[nodeId]
@@ -215,9 +242,12 @@ class Network(object):
             # host.sendContextsToNeighbors(printFlag = Network.printResult)
             
 if __name__ == "__main__":
-    os.chdir("../test")
     import unittest
-    sys.path.append("../test")
-    from testNetwork import *
+    
+    sys.path.append(os.path.abspath("../test"))
+    #print sys.path
+    os.chdir("../test")
+    #print os.path.abspath(".")
 
+    from testNetwork import *
     unittest.main(verbosity=2)
