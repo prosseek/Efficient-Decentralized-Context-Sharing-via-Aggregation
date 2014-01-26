@@ -154,6 +154,7 @@ class Host(object):
         return self.__str__()
         
     def sendContextsToNeighbor(self, n, printFlag = True):
+        #print n
         host = self.neighborDictionary[n]
         contexts = self.outputDictionary[n]
         #print contexts

@@ -10,11 +10,22 @@ def return_darwin_linux(darwin, linux):
     elif s == "Linux":
         assert os.path.exists(linux), "Directory missing %s" % linux
         return linux
+
+def getTestSimpleDirectory():
+    darwin = "/Users/smcho/temp/simulation/simpledata"
+    linux = "/home/smcho/temp/simulation/simpledata"
+    return return_darwin_linux(darwin, linux)  
         
-def getTestSampleDirectory():
+def getTestDirectory():
     darwin = "/Users/smcho/temp/simulation"
     linux = "/home/smcho/temp/simulation"
     return return_darwin_linux(darwin, linux)
     
+def getSampleFile():
+    darwin = "./test/testFile/sample.txt"
+    return return_darwin_linux(darwin, darwin)
+    
 if __name__ == "__main__":
-    print getTestSampleDirectory()
+    print getTestSimpleDirectory()
+    print getTestDirectory()
+    print getSampleFile()

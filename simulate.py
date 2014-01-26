@@ -5,6 +5,10 @@ sys.path.insert(0, "./src")
 from network import *
 from configuration import *
 
+testSampleDirectory = getTestSimpleDirectory() # "/Users/smcho/temp/simulation"
+dataDirectory = os.path.join(testSampleDirectory, "data")
+outputDirectory = os.path.join(testSampleDirectory, "results")
+
 def getFilePath(inputFile, resultDirectory, ext, name):
     fileName = os.path.split(inputFile)[1]
     fileWithoutExt = fileName.split('.')[0]
@@ -12,16 +16,17 @@ def getFilePath(inputFile, resultDirectory, ext, name):
 
 def runSimulate(inputFile, singleOnly, resultDirectory = "./"):
     result = ""
-    sampleFile = inputFile
     Network.s = singleOnly
 
     name = "S" if singleOnly else "A"
-    n = Network(sampleFile)
     
-    n.dotGen("/Users/smcho/temp/result.dot")
+    n = Network(inputFile)
+    
+    dotFile = os.path.join(outputDirectory, "result.dot")
+    n.dotGen(dotFile)
 
     Network.printStep = range(0,0)
-    n.simulate("./test/testFile/sample.txt", 100)
+    n.simulate(getSampleFile(), 100)
     a = n.analyzer
 
     print "Size: based on the steps"
@@ -57,10 +62,7 @@ def runSimulate(inputFile, singleOnly, resultDirectory = "./"):
     with open(f, "w") as a:
         a.write(result)
 
-if __name__ == "__main__":
-    testSampleDirectory = configuration.getTestSampleDirectory() # "/Users/smcho/temp/simulation"
-    dataDirectory = os.path.join(testSampleDirectory, "data")
-    outputDirectory = os.path.join(testSampleDirectory, "results")
+if __name__ == "__main__":    
     singleOnly = True
     for i in range(10, 20, 10):
         inputFile = os.path.join(dataDirectory, "mesh" + str(i) + ".txt")
