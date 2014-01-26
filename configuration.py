@@ -12,8 +12,8 @@ def return_darwin_linux(darwin, linux):
         return linux
 
 def getTestSimpleDirectory():
-    darwin = "/Users/smcho/temp/simulation/simpledata"
-    linux = "/home/smcho/temp/simulation/simpledata"
+    darwin = "./test/testFile"
+    linux = darwin
     return return_darwin_linux(darwin, linux)  
         
 def getTestDirectory():

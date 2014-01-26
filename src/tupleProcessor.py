@@ -50,9 +50,9 @@ class TupleProcessor(object):
         return self
 
 if __name__ == "__main__":
-    os.chdir("../test")
     import unittest
-    sys.path.append("../test")
-    from testNetwork import *
+    import sys
+    sys.path.append("./test")
+    from testTupleProcessor import *
 
     unittest.main(verbosity=2)
