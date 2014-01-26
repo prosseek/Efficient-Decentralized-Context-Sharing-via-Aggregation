@@ -2,12 +2,12 @@ import platform
 import os.path
 
 def return_darwin_linux(darwin, linux):
-    os = platform.system()
+    s = platform.system()
 
-    if os == "Darwin":
+    if s == "Darwin":
         assert os.path.exists(darwin), "Directory missing %s" % linux
         return darwin
-    elif os == "Linux":
+    elif s == "Linux":
         assert os.path.exists(linux), "Directory missing %s" % linux
         return linux
         
