@@ -5,7 +5,7 @@ sys.path.append("../src")
 
 from tupleProcessor import *
 
-class TestValue(unittest.TestCase):
+class TestTupleProcessor(unittest.TestCase):
     def setUp(self):
         pass
         

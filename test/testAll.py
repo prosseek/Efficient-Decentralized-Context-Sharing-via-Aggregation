@@ -33,6 +33,7 @@ def getTestNames():
         test_suiteString += "test_suite.addTest(unittest.makeSuite(%s))\n    " % key
         
     generated_code = "%s\n%s" % (importString, suiteString.format(s = test_suiteString))
+    #print generated_code
     return generated_code
 
 if __name__ == "__main__":

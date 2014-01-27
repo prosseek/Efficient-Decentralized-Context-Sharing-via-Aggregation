@@ -18,7 +18,7 @@ class TestNetwork(unittest.TestCase):
         
     def test_getMaxNeighbors(self):
         a = Network("testFile/network1.txt")
-        self.assertEqual(a.getMaxNeighbors(), 3)
+        self.assertEqual(a.getMinMaxNeighbors()[1], 3)
         
     def test_getItem(self):
         a = Network("testFile/network1.txt")
