@@ -21,7 +21,7 @@ class TreeGen:
             depth += 1
         return depth
         
-    def _generate(self, node_size, max_width, max_depth):
+    def _generate(self, node_size, max_depth, max_width):
         self.node_size = node_size
         self.max_width = max_width
         self.max_depth = max_depth
@@ -39,6 +39,13 @@ class TreeGen:
         
         while count < node_size and current_depth <= depth:
             width = random.randrange(self.max_width)
+
+            current_depth = TreeGen.get_depth(tree)
+            # critical condition
+            # When depth + 1 is the same as current generated node
+            # The width should be 1
+            if (current_depth + 1) == count and width == 0:
+                width = 1
             
             if width > 0:
                 if count + width > node_size:
@@ -58,7 +65,7 @@ class TreeGen:
                 
         return tree, depth
         
-    def generate(self, node_size, max_width, max_depth, max_attempt = 5):
+    def generate(self, node_size, max_depth, max_width, max_attempt = 5):
         assert node_size > 0
         assert max_depth != 1
         assert max_width != 1
@@ -72,7 +79,7 @@ class TreeGen:
         count = 0
         while count < max_attempt:
             try:
-                tree, depth = self._generate(node_size, max_width, max_depth)
+                tree, depth = self._generate(node_size, max_depth=max_depth, max_width=max_width)
                 generated_tree_size = len(tree)
                 if generated_tree_size == node_size:
                     return tree, depth

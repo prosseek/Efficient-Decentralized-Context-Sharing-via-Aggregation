@@ -5,37 +5,50 @@ from networkgen import *
 import configuration
 import glob
 
+def printOK(filePath):
+    print "%s file is created" % filePath
+    
+def printError(filePath):
+    print >> sys.err, "%s file is created" % filePath
+
 def generateOneGraph(node, depth, width, count, density):
-    tree_name = "tree" + str(node) + "_" + str(depth) + "_" + str(width) + "_" + str(count) + ".txt"
-    mesh_name = "mesh" + str(node) + "_" + str(depth) + "_" + str(width) + "_" + str(density) + "_" + str(count) + ".txt"
+    tree_name = "tree" + str(node) + "_" + str(depth) + "_" + str(width) + "_" + str(count)
+    mesh_name = "mesh" + str(node) + "_" + str(depth) + "_" + str(width) + "_" + str(density) + "_" + str(count)
     #print tree_name
     #print mesh_name
     dataDirectory = configuration.getDataDirectory()
-    treeFilePath = os.path.join(dataDirectory, tree_name)
-    meshFilePath = os.path.join(dataDirectory, mesh_name)
+    treeFilePath = os.path.join(dataDirectory, tree_name + ".txt")
+    meshFilePath = os.path.join(dataDirectory, mesh_name + ".txt")
+    treeDotFilePath = os.path.join(dataDirectory, tree_name + ".dot")
+    meshDotFilePath = os.path.join(dataDirectory, mesh_name + ".dot")
     
     #print treeFilePath
     #print meshFilePath
     
     c = NetworkGen()
     try:
-        tree = c.generate_tree_file(treeFilePath, node, width=width, depth=depth)
-        print tree
-    except TestAggregationExceptions as e:
-        pass
-    
-    # text = filePath % tree_name
-    # tree = c.generate_tree_file(text, i, width=width, depth=depth)  # generate 10 nodes tree network
-    # dot = dotPath % tree_name
-    # c.dotGen(dot, tree)
-    # 
-    # text = filePath % (mesh_name)
-    # mesh = c.generate_mesh_file(text, tree, 0.4)
-    # dot = dotPath % (mesh_name)
-    # c.dotGen(dot, mesh)
+        tree = c.generate_tree_file(treeFilePath, node, depth=depth, width=width)
+        #printOK(treeFilePath)
+        c.dotGen(treeDotFilePath, tree)
+        #printOK(treeDotFilePath)
+        #print tree
+    except NotGenerateGraphException as e:
+        printError(treeFilePath)
+        return False
+        
+    # Now, mesh file is generated
+    try:
+        mesh = c.generate_mesh_file(meshFilePath, tree, density)
+        #printOK(meshFilePath)
+        c.dotGen(meshDotFilePath, mesh)
+        #printOK(meshDotFilePath)
+    except NotGenerateGraphException as e:
+        printError(meshFilePath)
+        return False
+        
+    return True
 
-
-def generateGraphs(totalSize, node, depth, width, type = "tree", density = 0.4):
+def generateGraphs(totalSize, node, depth, width, density = 0.4):
     """
     It looks into the directory to count the number of files already generated.
     It **tries** to generate totalSize of circuits from them
@@ -51,7 +64,7 @@ def generateGraphs(totalSize, node, depth, width, type = "tree", density = 0.4):
     """
     
     ## Get the number of exisiting graphs
-    pattern = type + str(node) + "*.txt"
+    pattern = "tree" + str(node) + "_*.txt"
     directory = os.path.join(configuration.getTestDirectory(), "data")
     globintput = os.path.join(directory, pattern)
     res = glob.glob(globintput)
@@ -59,7 +72,7 @@ def generateGraphs(totalSize, node, depth, width, type = "tree", density = 0.4):
     generatedFileCount = 0
     attemptCount = 0
     
-    while generatedFileCount <= totalSize:
+    while generatedFileCount < totalSize:
         result = generateOneGraph(node, depth, width, newNumber + generatedFileCount, density)
         attemptCount += 1
         if result:
@@ -67,9 +80,21 @@ def generateGraphs(totalSize, node, depth, width, type = "tree", density = 0.4):
         else:
             print >> sys.stderr, "Couldn't generated with %d/%d/%d" % (node, depth, width)
             raise Exception("Not generated file")
+    
+def minimumCheckedWidth(min, value):
+    return value if value > min else min
+                
+def generateVaryingGraphs(totalSize, node, density = 0.4):
+    # very long graph
+    generateGraphs(totalSize = totalSize/5, node = node, depth = node, width = 2, density = density)
+    generateGraphs(totalSize = totalSize/5, node = node, depth = node, width = minimumCheckedWidth(3, int(0.25*node)), density = density)
+    generateGraphs(totalSize = totalSize/5, node = node, depth = node, width = minimumCheckedWidth(3, int(node*0.5)), density = density)
+    generateGraphs(totalSize = totalSize/5, node = node, depth = node, width = minimumCheckedWidth(3, int(node*0.75)), density = density)
+    # very wide graph
+    generateGraphs(totalSize = totalSize/5, node = node, depth = node/2, width = totalSize, density = density)
 
 if __name__ == "__main__":
-    generateGraphs(totalSize = 10, node = 10, depth = 10, width = 3)
+    generateVaryingGraphs(totalSize = 100, node = 20, density = 0.4)
 """    
     # narrow one check
     iteration = 30

@@ -17,7 +17,17 @@ class TestNetworkgen(unittest.TestCase):
         depth = 5
         res = self.ng.generate_tree_network(node, width, depth)
         self.assertTrue(len(res) == node)
-        
+
+    def test_generate_null_tree_gen(self):
+        """
+        http://prg.prosseek.com/blog/2014/01/27/wrong-variable-checking-error/
+        """
+        try:
+            tree = self.ng.generate_tree_network(10, 10, 2)
+            print tree
+        except NotGenerateGraphException as e:
+            print e
+            self.assertTrue(e, "Tree not generated with params: node(10),width(2),depth(10)")
         #tree = c.generate_tree_file(text, i, width=width, depth=depth) 
         
     # def test_treeGen(self):

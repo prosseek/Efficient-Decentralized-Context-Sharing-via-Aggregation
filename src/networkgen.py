@@ -55,27 +55,27 @@ class NetworkGen(object):
         r = random.randint(0, maxValue)
         return r
         
-    def generate_tree_network(self, node, width = None, depth = None, max_attempt = 300):
+    def generate_tree_network(self, node, depth = None, width = None, max_attempt = 300):
         if width is None:
             width = node / 3
         if depth is None:
             depth = node / 3
         tree_gen = TreeGen()
-        tree, result_depth = tree_gen.generate(node, width, depth, max_attempt)
-        if depth > 0:
+        tree, result_depth = tree_gen.generate(node, max_depth=depth, max_width=width, max_attempt=max_attempt)
+        if result_depth > 0:
             tree = TreeGen.format_converter(tree)
             tree = self.makeSymmetric(tree)
             return tree
         else:
-            raise TestAggregationExceptions("Tree not generated with params: node(%d),width(%d),depth(%d)" % (node, width, result_depth))
+            raise NotGenerateGraphException("Tree not generated with params: node(%d),width(%d),depth(%d)" % (node, width, depth))
 
     def generate_mesh_file(self, file_path, tree, percentage = 0.3):
         mesh = TreeGen.tree_to_mesh(tree, percentage)
         NetworkGen.generate_tree_file_from_tree(file_path, mesh)
         return mesh
 
-    def generate_tree_file(self, file_path, node, width = None, depth = None, max_attempt = 300):
-        tree = self.generate_tree_network(node, width, depth, max_attempt)
+    def generate_tree_file(self, file_path, node, depth = None, width = None, max_attempt = 300):
+        tree = self.generate_tree_network(node, depth=depth, width=width, max_attempt=max_attempt)
         NetworkGen.generate_tree_file_from_tree(file_path, tree)
         return tree
 

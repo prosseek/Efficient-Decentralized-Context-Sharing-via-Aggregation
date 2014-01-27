@@ -78,4 +78,4 @@ def analyze(pattern):
     return ("total number = %d\n" % len(files)) + stat(n=n, e=e, d=d, w1=w1, w2=w2)
 
 if __name__ == "__main__":
-    print "Pattern: tree10_\n" + analyze("tree10_")
+    print "Pattern: tree10_\n" + analyze("tree20_")
