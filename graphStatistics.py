@@ -37,15 +37,17 @@ def _stat(list):
     avg = 1.0*sum(list)/len(list)
     return mini, maxi, avg
 
-def stat(n, e, d, w):
+def stat(n, e, d, w1, w2):
     min,max,avg = _stat(n)
     result = "Node:  min (%d) max (%d) avg(%d)\n" % (min, max, avg)
     min,max,avg = _stat(e)
     result += "Edge:  min (%d) max (%d) avg(%d)\n" % (min, max, avg)
     min,max,avg = _stat(d)
     result += "Depth: min (%d) max (%d) avg(%d)\n" % (min, max, avg)
-    min,max,avg = _stat(w)
-    result += "Width: min (%d) max (%d) avg(%d)\n" % (min, max, avg)
+    min,max,avg = _stat(w1)
+    result += "Min Width: min (%d) max (%d) avg(%d)\n" % (min, max, avg)
+    min,max,avg = _stat(w2)
+    result += "Max Width: min (%d) max (%d) avg(%d)\n" % (min, max, avg)
     return result
 
 def analyze(pattern):
@@ -59,7 +61,8 @@ def analyze(pattern):
     n = []
     e = []
     d = []
-    w = []
+    w1 = []
+    w2 = []
     for f in files:
         net = Network(f)
         # print n.getNumberOfNodes()
@@ -69,9 +72,10 @@ def analyze(pattern):
         n.append(net.getNumberOfNodes())
         e.append(net.getNumberOfEdges())
         d.append(net.getDepth())
-        w.append(net.getWidth())
+        w1.append(net.getMinWidth())
+        w2.append(net.getMaxWidth())
 
-    return ("total number = %d\n" % len(files)) + stat(n=n, e=e, d=d, w=w)
+    return ("total number = %d\n" % len(files)) + stat(n=n, e=e, d=d, w1=w1, w2=w2)
 
 if __name__ == "__main__":
     print "Pattern: tree10_\n" + analyze("tree10_")

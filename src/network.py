@@ -80,17 +80,20 @@ class Network(object):
         res = self.getMaxPaths()
         return len(max(res, key=len))
         
-    def getWidth(self):
-        return self.getMaxNeighbors()
+    def getMaxWidth(self):
+        return self.getMinMaxNeighbors()[1]
+    
+    def getMinWidth(self):
+        return self.getMinMaxNeighbors()[0]
         
-    def getMaxNeighbors(self):
+    def getMinMaxNeighbors(self):
         """
         The width of a graph is defined by maximum number of neighbors
         """
         n = []
         for i in self.getNodes():
             n.append(len(self.getNeighbors(i)))
-        return max(n)
+        return min(n), max(n)
         
     def getNeighbors(self, nodeId):
         return self.networkTopology[nodeId]

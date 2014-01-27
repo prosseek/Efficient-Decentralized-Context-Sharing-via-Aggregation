@@ -3,6 +3,7 @@ import os
 import sys
 
 from treeGen import *
+from aggregationExceptions import *
 
 dotTemplate = """
 graph graphname {
@@ -66,7 +67,7 @@ class NetworkGen(object):
             tree = self.makeSymmetric(tree)
             return tree
         else:
-            raise Exception("Tree not generated with params: node(%d),width(%d),depth(%d)" % (node, width, result_depth))
+            raise TestAggregationExceptions("Tree not generated with params: node(%d),width(%d),depth(%d)" % (node, width, result_depth))
 
     def generate_mesh_file(self, file_path, tree, percentage = 0.3):
         mesh = TreeGen.tree_to_mesh(tree, percentage)
