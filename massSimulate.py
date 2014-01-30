@@ -122,7 +122,7 @@ if __name__ == "__main__":
     f = open(resultFile,"w")
     f.close()
 
-    all_patterns = (["_mesh", "_tree"], (True, False), range(10,101,10))
+    all_patterns = (["mesh", "tree"], (True, False), range(10,101,10))
     for types in all_patterns[0]:
         #print types, all_patterns[0]
         for singleOnly in all_patterns[1]:
