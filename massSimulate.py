@@ -126,7 +126,7 @@ if __name__ == "__main__":
         for singleOnly in all_patterns[1]:
             so = singleOnly
             for r in all_patterns[2]:
-                pattern = types + str(r) + '*.txt'
+                pattern = types + str(r) + '_*.txt'
                 patternPath = os.path.join(testSampleDirectory, pattern)
                 print pattern + " when singleOnly is " + str(so)
                 try:
