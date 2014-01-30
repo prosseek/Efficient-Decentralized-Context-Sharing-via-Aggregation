@@ -2,7 +2,6 @@ import random
 import sys
 import copy
 
-
 class TreeGen:
     def __init__(self): 
         pass
@@ -133,6 +132,7 @@ class TreeGen:
                 result.add((node1, node2))
 
             if iteration_count > node_size:
+                print >> sys.stderr, "node_size(%d) iter_count(%d)" % (node_size, iteration_count)
                 raise Exception("Too many iterations")
         return result
 
@@ -153,7 +153,7 @@ class TreeGen:
         The third parameter percentage is % of numbers to be connected.
         When the number of node is 100, and percentage is 0.2, the 20 nodes are newly connected
         """
-        assert percentage < 0.6  # Let's make it less than 60%.
+        assert percentage < 0.9  # Let's make it less than 90%.
         node_size = len(tree)
         additional_node_size = int(node_size * percentage)
 

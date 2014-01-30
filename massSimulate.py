@@ -104,7 +104,10 @@ def printToFile(fileName, content):
     f.close()
 
 if __name__ == "__main__":
-    testSampleDirectory = getDataDirectory()
+    testPattern = "10_100_10_80"
+    testSampleDirectory = os.path.join(getTestDirectory(), testPattern)
+    print testSampleDirectory
+    #sys.exit(0)
     # mesh
     #inputFile = os.path.join(testSampleDirectory,"mesh20_3_10_0.txt")
     #res = runOneSimulate(inputFile, singleOnly=False)
@@ -118,7 +121,7 @@ if __name__ == "__main__":
     # print p
     
     #all_patterns = (("mesh", "tree"), (True, False), range(10,101,10))
-    resultFile = os.path.join(getResultsDirectory(), "result_2014_01_30.txt")
+    resultFile = os.path.join(getResultsDirectory(), "result_%s.txt" % testPattern)
 
     all_patterns = (["mesh", "tree"], (True, False), range(10,101,10))
     for types in all_patterns[0]:

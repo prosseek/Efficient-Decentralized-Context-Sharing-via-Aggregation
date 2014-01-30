@@ -11,12 +11,12 @@ def printOK(filePath):
 def printError(filePath):
     print >> sys.err, "%s file is created" % filePath
 
-def generateOneGraph(node, depth, width, count, density):
+def generateOneGraph(node, depth, width, count, directory, density):
     tree_name = "tree" + str(node) + "_" + str(depth) + "_" + str(width) + "_" + str(count)
     mesh_name = "mesh" + str(node) + "_" + str(depth) + "_" + str(width) + "_" + str(density) + "_" + str(count)
     #print tree_name
     #print mesh_name
-    dataDirectory = configuration.getDataDirectory()
+    dataDirectory = directory
     treeFilePath = os.path.join(dataDirectory, tree_name + ".txt")
     meshFilePath = os.path.join(dataDirectory, mesh_name + ".txt")
     treeDotFilePath = os.path.join(dataDirectory, tree_name + ".dot")
@@ -47,8 +47,31 @@ def generateOneGraph(node, depth, width, count, density):
         return False
         
     return True
+    
+def findMatchingMeshName(treeName):
+    """
+    tree30_30_2_0.txt matches
+    mesh30_30_2_0.8_0.txt
+    
+    Given tree return the matching file in a directory
+    """
+    containingDirectory = os.path.split(treeName)[0]
+    nameOnly = os.path.split(treeName)[1]
+    
+    treeComponent = nameOnly.replace("tree","mesh").split("_")
+    #  < 0      < 1    < 2   < 3
+    # ['mesh30', '15', '100', '80.txt']
+    treeComponent.insert(3, "*")
+    pattern = os.path.join(containingDirectory, "_".join(treeComponent))
+    
+    globResult = glob.glob(pattern)
+    
+    if len(globResult) == 0: 
+        return None
+    else: 
+        return globResult[0]
 
-def generateGraphs(totalSize, node, depth, width, density = 0.4):
+def generateGraphs(totalSize, factor, node, depth, width, directory, density = 0.4):
     """
     It looks into the directory to count the number of files already generated.
     It **tries** to generate totalSize of circuits from them
@@ -64,17 +87,45 @@ def generateGraphs(totalSize, node, depth, width, density = 0.4):
     """
     
     ## Get the number of exisiting graphs
+    expected_to_generate = int(totalSize/factor)
     pattern = "tree" + str(node) + "_*.txt"
-    directory = os.path.join(configuration.getTestDirectory(), "data")
-    globintput = os.path.join(directory, pattern)
-    res = glob.glob(globintput)
-    newNumber = len(res)
+    globintputTree = os.path.join(directory, pattern)
+    resTree = glob.glob(globintputTree)
+    
+    pattern = "mesh" + str(node) + "_*.txt"
+    globintputMesh = os.path.join(directory, pattern)
+    resMesh = glob.glob(globintputMesh)
+    
+    if len(resTree) != len(resMesh):
+        files = []
+        print >> sys.stderr, "Tree and Mesh generation mismatch tree(%d) - mesh(%d)" % (len(resTree), len(resMesh))
+        for i in resTree:
+            matchingMesh = findMatchingMeshName(i)
+            #print matchingMesh
+            if matchingMesh is None:
+                print >> sys.stderr, "No matching mesh for tree %s - reduce density" % i
+                files.append(i)
+        for i in files:
+            print "removing file %s" % i
+            os.unlink(i)
+            dotFile = i.replace("txt","dot")
+            os.unlink(dotFile)
+        sys.exit(0)
+
+    #smcho
+    res = glob.glob(globintputTree)
+    totalGeneratedSoFar = len(res)
     generatedFileCount = 0
     attemptCount = 0
     
-    while generatedFileCount < totalSize:
-        result = generateOneGraph(node, depth, width, newNumber + generatedFileCount, density)
+    print generatedFileCount
+    print totalSize
+    print generatedFileCount < expected_to_generate and (generatedFileCount + totalGeneratedSoFar < totalSize)
+    
+    while generatedFileCount < expected_to_generate and (generatedFileCount + totalGeneratedSoFar < totalSize):
+        result = generateOneGraph(node, depth, width, totalGeneratedSoFar + generatedFileCount, directory, density)
         attemptCount += 1
+        
         if result:
             generatedFileCount += 1
         else:
@@ -84,36 +135,33 @@ def generateGraphs(totalSize, node, depth, width, density = 0.4):
 def minimumCheckedWidth(min, value):
     return value if value > min else min
                 
-def generateVaryingGraphs(totalSize, node, density = 0.4):
+def generateVaryingGraphs(totalSize, node, directory, density = 0.4):
     # very long graph
-    generateGraphs(totalSize = totalSize/5, node = node, depth = node, width = 2, density = density)
-    generateGraphs(totalSize = totalSize/5, node = node, depth = node, width = minimumCheckedWidth(3, int(0.25*node)), density = density)
-    generateGraphs(totalSize = totalSize/5, node = node, depth = node, width = minimumCheckedWidth(3, int(node*0.5)), density = density)
-    generateGraphs(totalSize = totalSize/5, node = node, depth = node, width = minimumCheckedWidth(3, int(node*0.75)), density = density)
+    generateGraphs(totalSize = totalSize, factor = 5, node = node, depth = node, width = 2, directory=directory, density = density)
+    generateGraphs(totalSize = totalSize, factor = 5, node = node, depth = node, width = minimumCheckedWidth(3, int(0.25*node)), directory = directory, density = density)
+    generateGraphs(totalSize = totalSize, factor = 5, node = node, depth = node, width = minimumCheckedWidth(3, int(node*0.5)), directory= directory, density = density)
+    generateGraphs(totalSize = totalSize, factor = 5, node = node, depth = node, width = minimumCheckedWidth(3, int(node*0.75)), directory = directory, density = density)
     # very wide graph
-    generateGraphs(totalSize = totalSize/5, node = node, depth = node/2, width = totalSize, density = density)
+    generateGraphs(totalSize = totalSize, factor = 5, node = node, depth = node/2, width = totalSize, directory = directory, density = density)
 
 if __name__ == "__main__":
-    generateVaryingGraphs(totalSize = 100, node = 100, density = 0.4)
-"""    
-    # narrow one check
-    iteration = 30
-    for i in [10]: #[10,20]: # ,30,40,50,60,70,80,90,100]:
-        numberOfNode = i
-        width = 3
-        depth = i
-
-        for j in range(iteration):
-            tree_name = "tree" + str(i) + "_" + str(width) + "_" + str(depth) + "_" + str(j)
-            mesh_name = "mesh" + str(i) + "_" + str(width) + "_" + str(depth) + "_" + str(j)
-            c = NetworkGen()
-            text = filePath % tree_name
-            tree = c.generate_tree_file(text, i, width=width, depth=depth)  # generate 10 nodes tree network
-            dot = dotPath % tree_name
-            c.dotGen(dot, tree)
-
-            text = filePath % (mesh_name)
-            mesh = c.generate_mesh_file(text, tree, 0.4)
-            dot = dotPath % (mesh_name)
-            c.dotGen(dot, mesh)
-"""
+    density = 0.5
+    totalSize = 50
+    
+    nodeFrom = 200
+    nodeTo = 500
+    incre = 50
+    
+    directoryNameDensity = density
+    resultDirName = "%d_%d_%d_%d" % (nodeFrom, nodeTo, incre, int(directoryNameDensity*100))
+    directory = os.path.join(configuration.getTestDirectory(), resultDirName)
+    print directory
+    #sys.exit(0)
+    if os.path.exists(directory):
+        print "YES %s exists" % directory
+    else:
+        message = "%s does not exist: creating one" % directory
+        print message
+        os.mkdir(directory)
+    for i in [500, 400, 300, 200]: #, 20, 10]:
+        generateVaryingGraphs(totalSize = totalSize, node = i, directory = directory, density = density)
