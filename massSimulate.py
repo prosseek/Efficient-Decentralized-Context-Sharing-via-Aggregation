@@ -119,8 +119,6 @@ if __name__ == "__main__":
     
     #all_patterns = (("mesh", "tree"), (True, False), range(10,101,10))
     resultFile = os.path.join(getResultsDirectory(), "result_2014_01_30.txt")
-    f = open(resultFile,"a")
-    f.close()
 
     all_patterns = (["mesh", "tree"], (True, False), range(10,101,10))
     for types in all_patterns[0]:
