@@ -62,19 +62,17 @@ def runOneSimulate(inputFile, singleOnly):
 def get_average(input):
     a = TupleProcessor()
     s = 0.0
-    p = TupleProcessor()
+    c = TupleProcessor()
     for file in input:
         # get the average of packet number
         r = input[file]
         #print r
         a += r['accuracy']
         s += r['speed']
-        p += r['packetCount']
+        c += r['packetCount']
     # get the average of accuracy
     size = len(input)
-    print a/size
-    print s/size
-    print p/size
+    return a/size, s/size, c/size
 
 def runMassiveSimulation(pattern, singleOnly=True):
     files = glob.glob(pattern)
@@ -90,12 +88,14 @@ def runMassiveSimulation(pattern, singleOnly=True):
         return None
 
 if __name__ == "__main__":
-    testSampleDirectory = os.path.join(getTestSimpleDirectory(), "data")
+    testSampleDirectory = getDataDirectory()
     # mesh
     #inputFile = os.path.join(testSampleDirectory,"mesh20_3_10_0.txt")
     #res = runOneSimulate(inputFile, singleOnly=False)
     #print res
 
-    pattern = os.path.join(testSampleDirectory, "mesh10*.txt")
-    result = runMassiveSimulation(pattern, singleOnly=False)
-    print result
+    pattern = os.path.join(testSampleDirectory, "_mesh*.txt")
+    a,s,c = runMassiveSimulation(pattern, singleOnly=True)
+    print a
+    print s
+    print c

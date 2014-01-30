@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d90214be-96d1-44f8-972f-8e05f0f0711d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/progress/2014_01_30 - 1. cohorts_change.txt" afterPath="$PROJECT_DIR$/doc/progress/2014_01_30 - 1. cohorts_change.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/progress/2014_01_30 - 2. get the results.txt" afterPath="$PROJECT_DIR$/doc/progress/2014_01_30 - 2. get the results.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyzer.py" afterPath="$PROJECT_DIR$/src/analyzer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generateGraphs.py" afterPath="$PROJECT_DIR$/generateGraphs.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/graphStatistics.py" afterPath="$PROJECT_DIR$/graphStatistics.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/massSimulate.py" afterPath="$PROJECT_DIR$/massSimulate.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -50,19 +50,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="massSimulate.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="massSimulate.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/massSimulate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="18" selection-start="1183" selection-end="1183" vertical-scroll-proportion="-0.5151515" vertical-offset="966" max-vertical-offset="1560">
+            <state line="47" column="18" selection-start="1183" selection-end="1183" vertical-scroll-proportion="5.6666665" vertical-offset="966" max-vertical-offset="1560">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="analyzer.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="analyzer.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/analyzer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="0" selection-start="830" selection-end="830" vertical-scroll-proportion="-6.230769" vertical-offset="228" max-vertical-offset="3045">
+            <state line="57" column="26" selection-start="1973" selection-end="1973" vertical-scroll-proportion="0.96756756" vertical-offset="273" max-vertical-offset="3090">
               <folding />
             </state>
           </provider>
@@ -708,16 +708,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/analyzer.py">
+    <entry file="file://$PROJECT_DIR$/massSimulate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="830" selection-end="830" vertical-scroll-proportion="-6.230769" vertical-offset="228" max-vertical-offset="3045">
+        <state line="47" column="18" selection-start="1183" selection-end="1183" vertical-scroll-proportion="5.6666665" vertical-offset="966" max-vertical-offset="1560">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/massSimulate.py">
+    <entry file="file://$PROJECT_DIR$/src/analyzer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="18" selection-start="1183" selection-end="1183" vertical-scroll-proportion="-0.5151515" vertical-offset="966" max-vertical-offset="1560">
+        <state line="57" column="26" selection-start="1973" selection-end="1973" vertical-scroll-proportion="0.96756756" vertical-offset="273" max-vertical-offset="3090">
           <folding />
         </state>
       </provider>

@@ -1,0 +1,22 @@
+## Goal
+
+Now, we have the results from `massiveSimulate.py` for the case mesh10* files in testSampleDirectory.  
+
+    pattern = os.path.join(testSampleDirectory, "mesh10*.txt")
+    a,s,c = runMassiveSimulation(pattern, singleOnly=False)
+    print a
+    print s
+    print c
+
+The result is a/s/c (accuracy, speed, count)
+
+	10.0,9.6,4.0,2.0
+	3.0
+	66.0,94.0
+	
+I need to get the values, and I need to process these values to make Excel spread sheets. 
+
+
+## Action Items
+
+1. Create all the patterns 

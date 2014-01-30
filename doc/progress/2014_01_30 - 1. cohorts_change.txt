@@ -67,6 +67,53 @@ And this is the new result:
 	66.0,94.0
 	None     
     
+## Examles
+
+### Mesh example for 10 nodes
+
+For `_mesh10_5_100_0.4_80.txt`. 
+What it says is that from node 2 to node 10, there are only 1 cohorts (in average) that contributes the accuracy. 
+
+`(6*6 + 8*3)/9 = 6.6667` 
+
+![mesh10*](./pic/g1.png =400x)
+
+	[[0, 0], [1, 6], [1, 8], [1, 6], [1, 6], 
+	 [1, 6], [1, 6], [1, 8], [1, 6], [1, 8]]
+
+
+	10.0,4.0,6.66666666667,1.0
+	3.0
+	26.0,31.0
+
+This is singles only case:
+	
+	10.0,10.0,0.0,0.0
+	3.0
+	166.0,0.0
+
+### Tree example for 10 nodes
+
+![mesh10*](./pic/g2.png =400x)
+
+	[[0, 0], [1, 8], [1, 8], [1, 8], [1, 8], 
+	 [1, 8], [1, 8], [1, 8], [1, 8], [1, 8]]
+	
+	10.0,2.8,8.0,1.0
+	2.0
+	18.0,9.0
+	
+Compare this with Singles only case:
+
+	[[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], 
+	 [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]]
+
+	10.0,10.0,0.0,0.0
+	2.0
+	90.0,0.0
+
+Don't forget the we know the count in tree case `(N*(N-1))`
+
 ## Github
 
 `fixed the wrong cohorts calculation`
