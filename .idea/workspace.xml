@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d90214be-96d1-44f8-972f-8e05f0f0711d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyzer.py" afterPath="$PROJECT_DIR$/src/analyzer.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generateGraphs.py" afterPath="$PROJECT_DIR$/generateGraphs.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/networkgen.py" afterPath="$PROJECT_DIR$/src/networkgen.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/testNetworkgen.py" afterPath="$PROJECT_DIR$/test/testNetworkgen.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/treeGen.py" afterPath="$PROJECT_DIR$/src/treeGen.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/graphStatistics.py" afterPath="$PROJECT_DIR$/graphStatistics.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/massSimulate.py" afterPath="$PROJECT_DIR$/massSimulate.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="aggregator.iws" />
@@ -23,7 +23,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/aggregator$codesize.coverage" NAME="codesize Coverage Results" MODIFIED="1390697099856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/aggregator$Unittests_in_testNetworkgen.coverage" NAME="Unittests in testNetworkgen Coverage Results" MODIFIED="1390831178500" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/aggregator$massSimulate.coverage" NAME="massSimulate Coverage Results" MODIFIED="1390698457542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/aggregator$massSimulate.coverage" NAME="massSimulate Coverage Results" MODIFIED="1390836348603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/aggregator$networkgen.coverage" NAME="networkgen Coverage Results" MODIFIED="1390683287786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/aggregator$generateGraph.coverage" NAME="generateGraph Coverage Results" MODIFIED="1390831890461" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/aggregator$testTreeGen.coverage" NAME="testTreeGen Coverage Results" MODIFIED="1390358904017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
@@ -50,13 +50,29 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="massSimulate.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/massSimulate.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="47" column="18" selection-start="1183" selection-end="1183" vertical-scroll-proportion="-0.5151515" vertical-offset="966" max-vertical-offset="1560">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="analyzer.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/analyzer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="0" selection-start="830" selection-end="830" vertical-scroll-proportion="-6.230769" vertical-offset="228" max-vertical-offset="3045">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="networkgen.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/networkgen.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="77" column="97" selection-start="2472" selection-end="2472" vertical-scroll-proportion="0.0" vertical-offset="976" max-vertical-offset="1845">
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -73,16 +89,16 @@
       <file leaf-file-name="testNetworkgen.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/testNetworkgen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="0" selection-start="591" selection-end="591" vertical-scroll-proportion="0.0" vertical-offset="181" max-vertical-offset="1350">
+            <state line="25" column="0" selection-start="591" selection-end="591" vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="1365">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="treeGen.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="treeGen.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/treeGen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="0" selection-start="1361" selection-end="1361" vertical-scroll-proportion="0.38329765" vertical-offset="481" max-vertical-offset="2700">
+            <state line="49" column="25" selection-start="1485" selection-end="1485" vertical-scroll-proportion="0.0" vertical-offset="735" max-vertical-offset="2730">
               <folding />
             </state>
           </provider>
@@ -92,24 +108,6 @@
         <entry file="file://$PROJECT_DIR$/test/testContext.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="6" column="0" selection-start="77" selection-end="77" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="1200">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="codesize.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/codesize.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1680">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="testValue.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/testValue.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="7" selection-start="0" selection-end="895" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="630">
               <folding />
             </state>
           </provider>
@@ -127,7 +125,7 @@
       <file leaf-file-name="network.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/network.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="250" column="0" selection-start="8129" selection-end="8160" vertical-scroll-proportion="0.0" vertical-offset="3750" max-vertical-offset="3915">
+            <state line="162" column="0" selection-start="4683" selection-end="4683" vertical-scroll-proportion="0.0" vertical-offset="2430" max-vertical-offset="3915">
               <folding />
             </state>
           </provider>
@@ -154,22 +152,22 @@
         <option value="$PROJECT_DIR$/test/testTreeGen.py" />
         <option value="$PROJECT_DIR$/generateGraph.py" />
         <option value="$PROJECT_DIR$/src/network.py" />
-        <option value="$PROJECT_DIR$/src/analyzer.py" />
         <option value="$PROJECT_DIR$/test/tupleProcessorTest.py" />
-        <option value="$PROJECT_DIR$/massSimulate.py" />
         <option value="$PROJECT_DIR$/src/tupleProcessor.py" />
         <option value="$PROJECT_DIR$/test/testNetworkgen.py" />
         <option value="$PROJECT_DIR$/src/treeGen.py" />
         <option value="$PROJECT_DIR$/generateGraphs.py" />
         <option value="$PROJECT_DIR$/src/networkgen.py" />
+        <option value="$PROJECT_DIR$/massSimulate.py" />
+        <option value="$PROJECT_DIR$/src/analyzer.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="43" />
-    <option name="y" value="506" />
-    <option name="width" value="1561" />
-    <option name="height" value="992" />
+    <option name="x" value="668" />
+    <option name="y" value="83" />
+    <option name="width" value="1179" />
+    <option name="height" value="763" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -197,7 +195,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -216,46 +213,19 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="aggregator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="aggregator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="aggregator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="aggregator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="editor" />
     <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="editor" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -266,7 +236,7 @@
       </console-settings>
     </option>
   </component>
-  <component name="RunManager" selected="Python.generateGraph">
+  <component name="RunManager" selected="Python.massSimulate">
     <configuration default="false" name="codesize" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -464,9 +434,6 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
-      <method />
-    </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -488,6 +455,9 @@
       <option name="PUREUNITTEST" value="true" />
       <option name="PARAMS" value="" />
       <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -561,9 +531,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.generateGraph" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in testNetworkgen" />
-        <item index="2" class="java.lang.String" itemvalue="Python.massSimulate" />
+        <item index="0" class="java.lang.String" itemvalue="Python.massSimulate" />
+        <item index="1" class="java.lang.String" itemvalue="Python.generateGraph" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in testNetworkgen" />
         <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in tupleProcessorTest" />
         <item index="4" class="java.lang.String" itemvalue="Python.codesize" />
       </list>
@@ -596,24 +566,24 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="43" y="506" width="1561" height="992" extended-state="0" />
+    <frame x="668" y="83" width="1179" height="763" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33863637" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32798165" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25306416" sideWeight="0.67620134" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24422443" sideWeight="0.5940367" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22859664" sideWeight="0.62830484" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3233945" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4059633" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3716952" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32798165" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -631,11 +601,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/src/network.py</url>
-          <line>162</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/generateGraphs.py</url>
           <line>29</line>
           <option name="timeStamp" value="9" />
@@ -645,8 +610,13 @@
           <line>25</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/massSimulate.py</url>
+          <line>73</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="13" />
+      <option name="time" value="15" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -662,30 +632,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/simulate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="36" selection-start="869" selection-end="869" vertical-scroll-proportion="0.0" vertical-offset="155" max-vertical-offset="1260">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/massSimulate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="16" selection-start="2018" selection-end="2018" vertical-scroll-proportion="0.0" vertical-offset="825" max-vertical-offset="1515">
-          <folding />
-        </state>
+        <state line="28" column="36" selection-start="869" selection-end="869" vertical-scroll-proportion="0.0" vertical-offset="155" max-vertical-offset="1260" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tupleProcessor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="44" selection-start="762" selection-end="762" vertical-scroll-proportion="0.0" vertical-offset="262" max-vertical-offset="945">
-          <folding />
-        </state>
+        <state line="32" column="44" selection-start="762" selection-end="762" vertical-scroll-proportion="0.0" vertical-offset="262" max-vertical-offset="945" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/codesize.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1650">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1650" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/testValue.py">
@@ -698,20 +655,6 @@
     <entry file="file://$PROJECT_DIR$/src/host.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="158" column="0" selection-start="5328" selection-end="5328" vertical-scroll-proportion="0.0" vertical-offset="2370" max-vertical-offset="2880">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/network.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="250" column="0" selection-start="8129" selection-end="8160" vertical-scroll-proportion="0.0" vertical-offset="3750" max-vertical-offset="3915">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/analyzer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="103" selection-start="2226" selection-end="2226" vertical-scroll-proportion="0.0" vertical-offset="745" max-vertical-offset="3090">
           <folding />
         </state>
       </provider>
@@ -740,9 +683,7 @@
     <entry file="file://$PROJECT_DIR$/src/networkgen.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="77" column="97" selection-start="2472" selection-end="2472" vertical-scroll-proportion="0.0" vertical-offset="976" max-vertical-offset="1845">
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -755,7 +696,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/treeGen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="0" selection-start="1361" selection-end="1361" vertical-scroll-proportion="0.38329765" vertical-offset="481" max-vertical-offset="2700">
+        <state line="49" column="25" selection-start="1485" selection-end="1485" vertical-scroll-proportion="0.0" vertical-offset="481" max-vertical-offset="2700">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/network.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="162" column="0" selection-start="4683" selection-end="4683" vertical-scroll-proportion="0.0" vertical-offset="2146" max-vertical-offset="3810">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/analyzer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="0" selection-start="830" selection-end="830" vertical-scroll-proportion="-6.230769" vertical-offset="228" max-vertical-offset="3045">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/massSimulate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="18" selection-start="1183" selection-end="1183" vertical-scroll-proportion="-0.5151515" vertical-offset="966" max-vertical-offset="1560">
           <folding />
         </state>
       </provider>

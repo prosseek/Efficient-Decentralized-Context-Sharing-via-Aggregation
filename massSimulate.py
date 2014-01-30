@@ -16,10 +16,11 @@ import glob
 
 import sys
 import os.path
-from tupleProcessor import TupleProcessor
 
 sys.path.insert(0, "./src")
 from network import *
+from tupleProcessor import TupleProcessor
+from configuration import *
 
 def getFilePath(inputFile, resultDirectory, ext, name):
     fileName = os.path.split(inputFile)[1]
@@ -46,7 +47,7 @@ def runOneSimulate(inputFile, singleOnly):
     n.simulate(sampleFile, endCount=100)
     a = n.analyzer
 
-    result["packetNumber"] = a.getFinalPacketNumber()
+    result["packetCount"] = a.getFinalPacketNumber()
     # 'accuracy': (4.0, 4.0, 0.0, 0.0)
     # 1. 4.0 -> Total number of recognition
     # 2. 4.0 -> Total number of single context recognition
@@ -68,7 +69,7 @@ def get_average(input):
         #print r
         a += r['accuracy']
         s += r['speed']
-        p += r['packetNumber']
+        p += r['packetCount']
     # get the average of accuracy
     size = len(input)
     print a/size
@@ -76,21 +77,25 @@ def get_average(input):
     print p/size
 
 def runMassiveSimulation(pattern, singleOnly=True):
-    files = glob.glob(pattern + "*.txt")
+    files = glob.glob(pattern)
     #print len(files)
     result = {}
     for f in files:
         result[f] = runOneSimulate(f, singleOnly)
 
-    return get_average(result)
+    if len(files) > 0:
+        return get_average(result)
+    else:
+        print >>sys.stderr, "No files in this pattern %s" % pattern
+        return None
 
 if __name__ == "__main__":
-    testSampleDirectory = "/Users/smcho/temp/simulation/data"
+    testSampleDirectory = os.path.join(getTestSimpleDirectory(), "data")
     # mesh
-    inputFile = os.path.join(testSampleDirectory,"mesh20_3_10_0.txt")
+    #inputFile = os.path.join(testSampleDirectory,"mesh20_3_10_0.txt")
     #res = runOneSimulate(inputFile, singleOnly=False)
     #print res
 
-    pattern = os.path.join(testSampleDirectory, "mesh4_")
-    result = runMassiveSimulation(pattern, singleOnly=True)
+    pattern = os.path.join(testSampleDirectory, "mesh10*.txt")
+    result = runMassiveSimulation(pattern, singleOnly=False)
     print result

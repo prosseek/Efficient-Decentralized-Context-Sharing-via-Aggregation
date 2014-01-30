@@ -33,8 +33,8 @@ class Analyzer(object):
         #print values
         if type(values[0]) is list:
             #print values
-            number_of_cohorts = [i[0] for i in values]
-            pcCount = [i[1] for i in values]
+            number_of_cohorts = filter(lambda x: x != 0, [i[0] for i in values])
+            pcCount = filter(lambda x: x != 0, [i[1] for i in values])
             return (sum(number_of_cohorts)*1.0/len(number_of_cohorts), sum(pcCount)*1.0/len(pcCount))
         else:
             return sum(values)*1.0/len(values)

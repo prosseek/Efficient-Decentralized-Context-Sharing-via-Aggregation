@@ -94,7 +94,7 @@ def generateVaryingGraphs(totalSize, node, density = 0.4):
     generateGraphs(totalSize = totalSize/5, node = node, depth = node/2, width = totalSize, density = density)
 
 if __name__ == "__main__":
-    generateVaryingGraphs(totalSize = 100, node = 20, density = 0.4)
+    generateVaryingGraphs(totalSize = 100, node = 100, density = 0.4)
 """    
     # narrow one check
     iteration = 30
