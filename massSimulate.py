@@ -16,6 +16,9 @@ import glob
 
 import sys
 import os.path
+    
+import datetime
+import time
 
 sys.path.insert(0, "./src")
 from network import *
@@ -76,7 +79,7 @@ def get_average(input):
 
 def runMassiveSimulation(pattern, singleOnly=True):
     files = glob.glob(pattern)
-    #print len(files)
+    #print pattern, files
     result = {}
     for f in files:
         result[f] = runOneSimulate(f, singleOnly)
@@ -84,8 +87,21 @@ def runMassiveSimulation(pattern, singleOnly=True):
     if len(files) > 0:
         return get_average(result)
     else:
-        print >>sys.stderr, "No files in this pattern %s" % pattern
-        return None
+        #print >>sys.stderr, "No files in this pattern %s" % pattern
+        raise Exception("No files in this pattern %s" % pattern)
+        
+def generatePrintResult(patternName, singleOnly, a,s,c):
+    name = patternName + " " + str(singleOnly) + "\n"
+    result = name + str(a) + "\n" + str(s) + "\n" + str(c) + "\n"
+    return result
+
+def printToFile(fileName, content):
+    f = open(fileName, "a")
+    ts = time.time()
+    st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
+    print >>f, st
+    print >>f, content
+    f.close()
 
 if __name__ == "__main__":
     testSampleDirectory = getDataDirectory()
@@ -94,8 +110,29 @@ if __name__ == "__main__":
     #res = runOneSimulate(inputFile, singleOnly=False)
     #print res
 
-    pattern = os.path.join(testSampleDirectory, "_mesh*.txt")
-    a,s,c = runMassiveSimulation(pattern, singleOnly=True)
-    print a
-    print s
-    print c
+    # pattern_name = "_mesh*.txt"
+    # singleOnly = True
+    # pattern = os.path.join(testSampleDirectory, pattern_name)
+    # a,s,c = runMassiveSimulation(pattern, singleOnly=singleOnly)
+    # p = generatePrintResult(pattern_name, singleOnly,a,s,c)
+    # print p
+    
+    #all_patterns = (("mesh", "tree"), (True, False), range(10,101,10))
+    resultFile = os.path.join(getResultsDirectory(), "result_2014_01_30.txt")
+
+    all_patterns = (["_mesh"], (True, False), range(10,101,10))
+    for types in all_patterns[0]:
+        #print types, all_patterns[0]
+        for singleOnly in all_patterns[1]:
+            s = singleOnly
+            for r in all_patterns[2]:
+                pattern = types + str(r) + '*.txt'
+                patternPath = os.path.join(testSampleDirectory, pattern)
+                print pattern + " when singleOnly is " + str(s)
+                try:
+                    a,s,c = runMassiveSimulation(patternPath, singleOnly=singleOnly)
+                    p = generatePrintResult(pattern, singleOnly,a,s,c)
+                    printToFile(resultFile, p)
+
+                except Exception as e:
+                    print "             >> " + str(e)

@@ -116,4 +116,5 @@ Don't forget the we know the count in tree case `(N*(N-1))`
 
 ## Github
 
-`fixed the wrong cohorts calculation`
+* `fixed the wrong cohorts calculation`
+* `bug fix in cohorts calculation`
