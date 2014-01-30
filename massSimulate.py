@@ -124,11 +124,11 @@ if __name__ == "__main__":
     for types in all_patterns[0]:
         #print types, all_patterns[0]
         for singleOnly in all_patterns[1]:
-            s = singleOnly
+            so = singleOnly
             for r in all_patterns[2]:
                 pattern = types + str(r) + '*.txt'
                 patternPath = os.path.join(testSampleDirectory, pattern)
-                print pattern + " when singleOnly is " + str(s)
+                print pattern + " when singleOnly is " + str(so)
                 try:
                     a,s,c = runMassiveSimulation(patternPath, singleOnly=singleOnly)
                     p = generatePrintResult(pattern, singleOnly,a,s,c)
