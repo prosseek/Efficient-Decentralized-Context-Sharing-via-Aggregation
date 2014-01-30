@@ -35,4 +35,6 @@ The result will be recorded in
 	Blank
 	...
 	
+OK. Started the massive simulation at [2014/01/30] 11:01am. 
+
  
