@@ -137,7 +137,7 @@ def minimumCheckedWidth(min, value):
                 
 def generateVaryingGraphs(totalSize, node, directory, density = 0.4):
     # very long graph
-    generateGraphs(totalSize = totalSize, factor = 5, node = node, depth = node, width = 2, directory=directory, density = density)
+    generateGraphs(totalSize = totalSize, factor = 5, node = node, depth = node, width = minimumCheckedWidth(2, int(0.15*node)), directory=directory, density = density)
     generateGraphs(totalSize = totalSize, factor = 5, node = node, depth = node, width = minimumCheckedWidth(3, int(0.25*node)), directory = directory, density = density)
     generateGraphs(totalSize = totalSize, factor = 5, node = node, depth = node, width = minimumCheckedWidth(3, int(node*0.5)), directory= directory, density = density)
     generateGraphs(totalSize = totalSize, factor = 5, node = node, depth = node, width = minimumCheckedWidth(3, int(node*0.75)), directory = directory, density = density)
@@ -152,6 +152,13 @@ if __name__ == "__main__":
     nodeTo = 500
     incre = 50
     
+    # density = 0.8
+    # totalSize = 100
+    # 
+    # nodeFrom = 10
+    # nodeTo = 100
+    # incre = 10
+    
     directoryNameDensity = density
     resultDirName = "%d_%d_%d_%d" % (nodeFrom, nodeTo, incre, int(directoryNameDensity*100))
     directory = os.path.join(configuration.getTestDirectory(), resultDirName)
@@ -163,5 +170,5 @@ if __name__ == "__main__":
         message = "%s does not exist: creating one" % directory
         print message
         os.mkdir(directory)
-    for i in [500, 400, 300, 200]: #, 20, 10]:
+    for i in [500, 450, 400, 350, 300, 250, 200]:
         generateVaryingGraphs(totalSize = totalSize, node = i, directory = directory, density = density)
