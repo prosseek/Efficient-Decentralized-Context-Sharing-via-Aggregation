@@ -145,12 +145,12 @@ def generateVaryingGraphs(totalSize, node, directory, density = 0.4):
     generateGraphs(totalSize = totalSize, factor = 5, node = node, depth = node/2, width = totalSize, directory = directory, density = density)
 
 if __name__ == "__main__":
-    density = 0.5
-    totalSize = 50
+    density = 0.1
+    totalSize = 100
     
-    nodeFrom = 200
-    nodeTo = 500
-    incre = 50
+    nodeFrom = 10
+    nodeTo = 100
+    incre = 10
     
     # density = 0.8
     # totalSize = 100
@@ -170,5 +170,5 @@ if __name__ == "__main__":
         message = "%s does not exist: creating one" % directory
         print message
         os.mkdir(directory)
-    for i in [500, 450, 400, 350, 300, 250, 200]:
+    for i in [100, 90, 80, 70, 60, 50, 40, 30, 20, 10]:
         generateVaryingGraphs(totalSize = totalSize, node = i, directory = directory, density = density)

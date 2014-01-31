@@ -86,7 +86,7 @@ class Results(object):
         result["totalSize"] = int(res.group(2))
         
         result["singleOnly"] = bool(block[1].split(" ")[1] == "True")
-        result["speed"] = block[3]
+        result["speed"] = float(block[3])
         
         # 69.4,4.945,64.3,3.4
         a = block[2].split(',')
@@ -136,28 +136,59 @@ class Results(object):
         # Step 1 collect results based on 
         return blocks
         
-    def sizeComparison(self):
+    def generateCsvForCategory(self, result1, result2, category):
         """
-        Generates CSV format data compare size between SingleOnly/Aggregated
+        generate csv data from two lists results1 and results2
         """
-        print self.db
-        result = filter(lambda key: self.db[key]["singleOnly"] == True, self.db)
-        result = map(lambda key: self.db[key], result)
-        print result
-        return "HA"
+        d1 = sorted(result1, key = lambda k: k["totalSize"])
+        d2 = sorted(result2, key = lambda k: k["totalSize"]) 
+               
+        result = "" # size, single, aggr\n"
+        for i, d in enumerate(d1):
+            x = d1[i]["totalSize"]
+            #print x
+            y1 = d1[i][category]
+            y2 = d2[i][category]
+            result += ("%d, %5.2f, %5.2f\n" % (x, y1, y2)) 
+        return result
+    
+    ### Comparisons
+    def compareSingleOnlyOrNot(self, type, category):
+        # Get tree comparison
+        f = lambda key: self.db[key]["singleOnly"] == True and self.db[key]["type"] == type
+        result1 = map(lambda key: self.db[key], filter(f, self.db))
+        f = lambda key: self.db[key]["singleOnly"] == False and self.db[key]["type"] == type
+        result2 = map(lambda key: self.db[key], filter(f, self.db))
+        result = ("%s %s\n" % (type, category) + "x, single, aggr\n" + self.generateCsvForCategory(result1, result2, category) + "\n") 
+        return result
         
-    def generateCsvForSizeComparison(self, toFile):
-        toFile = os.path.abspath(toFile)
-        result = self.sizeComparison()
-        f = open(toFile, "w")
-        f.write(result)
+    def generateCsvForSizeComparison(self, filename, type, categories):
+        #print filename
+        f = open(filename, "w")
+        
+        for c in categories:
+            result = self.compareSingleOnlyOrNot(type, c)
+            print result
+            f.write(result)
+    
         f.close()
         
+def appendFileName(original, prefix):
+    p, f = os.path.split(original)
+    return os.path.join(p, prefix + f)
+       
 def resultsToCsv(fromFile, toFile):
     r = Results(fromFile)
-    r.generateCsvForSizeComparison(toFile)
+    
+    categories = ["speed", "accuracyTotalPercentage", "accuracySinglePercentage", 
+                  "accuracyCohortsMemberCount","accuracyCohortsGroupCount",
+                  "accuracyAveragePerCohortsGroup","countTotal","countSingle","countAggregated"]
+    treeToFile = appendFileName(toFile, "tree_")
+    r.generateCsvForSizeComparison(treeToFile, "tree", categories)
+    treeToFile = appendFileName(toFile, "mesh_")
+    r.generateCsvForSizeComparison(treeToFile, "mesh", categories)
     
 if __name__ == "__main__":
-    fromFile = "/Users/smcho/Desktop/result_2014_01_30.txt"
-    toFile = "/Users/smcho/Desktop/a.csv"
+    fromFile = "/Users/smcho/Desktop/result_10_100_10_40.txt"
+    toFile = "/Users/smcho/Desktop/comparison.csv"
     resultsToCsv(fromFile, toFile)
