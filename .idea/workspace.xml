@@ -49,7 +49,7 @@
       <file leaf-file-name="massSimulate.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/massSimulate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="114" column="14" selection-start="3178" selection-end="3178" vertical-scroll-proportion="0.22222222" vertical-offset="1500" max-vertical-offset="2055">
+            <state line="117" column="14" selection-start="3285" selection-end="3285" vertical-scroll-proportion="0.22222222" vertical-offset="1545" max-vertical-offset="2100">
               <folding />
             </state>
           </provider>
@@ -562,7 +562,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="725" y="159" width="1179" height="763" extended-state="1" />
+    <frame x="725" y="159" width="1179" height="763" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -710,7 +710,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/massSimulate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="14" selection-start="3178" selection-end="3178" vertical-scroll-proportion="0.22222222" vertical-offset="1500" max-vertical-offset="2055">
+        <state line="117" column="14" selection-start="3285" selection-end="3285" vertical-scroll-proportion="0.22222222" vertical-offset="1545" max-vertical-offset="2100">
           <folding />
         </state>
       </provider>
