@@ -20,6 +20,8 @@ import os.path
 import datetime
 import time
 
+import gc
+
 sys.path.insert(0, "./src")
 from network import *
 from tupleProcessor import TupleProcessor
@@ -60,6 +62,7 @@ def runOneSimulate(inputFile, singleOnly):
     result["accuracy"] = a.getFinalAccuracy()
     result["speed"] = a.getFinalSpeed()
 
+    gc.collect()
     return result
 
 def get_average(input):
@@ -82,7 +85,9 @@ def runMassiveSimulation(pattern, singleOnly=True):
     #print pattern, files
     result = {}
     for f in files:
+        print "Processing file - %s" % f
         result[f] = runOneSimulate(f, singleOnly)
+        print result[f]
 
     if len(files) > 0:
         return get_average(result)
@@ -104,7 +109,7 @@ def printToFile(fileName, content):
     f.close()
 
 if __name__ == "__main__":
-    testPattern = "10_100_10_80"
+    testPattern = "200_500_50_50"
     testSampleDirectory = os.path.join(getTestDirectory(), testPattern)
     print testSampleDirectory
     #sys.exit(0)
@@ -123,13 +128,13 @@ if __name__ == "__main__":
     #all_patterns = (("mesh", "tree"), (True, False), range(10,101,10))
     resultFile = os.path.join(getResultsDirectory(), "result_%s.txt" % testPattern)
 
-    all_patterns = (["mesh", "tree"], (True, False), range(10,101,10))
+    all_patterns = (["mesh"], (False,), range(500,501,100))
     for types in all_patterns[0]:
         #print types, all_patterns[0]
         for singleOnly in all_patterns[1]:
             so = singleOnly
             for r in all_patterns[2]:
-                pattern = types + str(r) + '_*.txt'
+                pattern = types + str(r) + '_500*.txt'
                 patternPath = os.path.join(testSampleDirectory, pattern)
                 print pattern + " when singleOnly is " + str(so)
                 try:
