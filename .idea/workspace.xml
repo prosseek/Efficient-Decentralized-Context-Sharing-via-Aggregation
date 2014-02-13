@@ -5,6 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d90214be-96d1-44f8-972f-8e05f0f0711d" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ContextRep.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/contextsForOneSimulator.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resultsToCsv.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/testFile/results/mesh10_A.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/testFile/results/mesh10_S.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/testFile/results/tree10_A.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/testFile/results/tree10_S.data" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/aggregator.iml" afterPath="$PROJECT_DIR$/.idea/aggregator.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/context.py" afterPath="$PROJECT_DIR$/src/context.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/host.py" afterPath="$PROJECT_DIR$/src/host.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/testFile/results/result.dot" afterPath="$PROJECT_DIR$/test/testFile/results/result.dot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simulate.py" afterPath="$PROJECT_DIR$/simulate.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="aggregator.iws" />
@@ -37,92 +49,100 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="generateGraphs.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/generateGraphs.py">
+      <file leaf-file-name="context.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/context.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="0" selection-start="970" selection-end="970" vertical-scroll-proportion="0.0" vertical-offset="256" max-vertical-offset="1860">
+            <state line="87" column="20" selection-start="2270" selection-end="2270" vertical-scroll-proportion="0.0" vertical-offset="543" max-vertical-offset="1545">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="massSimulate.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/massSimulate.py">
+      <file leaf-file-name="value.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/value.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="117" column="14" selection-start="3285" selection-end="3285" vertical-scroll-proportion="0.22222222" vertical-offset="1545" max-vertical-offset="2100">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="183" max-vertical-offset="585">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="analyzer.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/analyzer.py">
+      <file leaf-file-name="tupleProcessor.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tupleProcessor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="26" selection-start="1973" selection-end="1973" vertical-scroll-proportion="66.34615" vertical-offset="2535" max-vertical-offset="3090">
+            <state line="32" column="44" selection-start="762" selection-end="762" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="945">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="networkgen.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/networkgen.py">
+      <file leaf-file-name="simulate.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/simulate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="97" selection-start="2472" selection-end="2472" vertical-scroll-proportion="0.0" vertical-offset="976" max-vertical-offset="1845">
+            <state line="28" column="14" selection-start="839" selection-end="847" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="1335">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="aggregationExceptions.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aggregationExceptions.py">
+      <file leaf-file-name="ContextRep.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ContextRep.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+            <state line="21" column="0" selection-start="642" selection-end="642" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="720">
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="util.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="108" column="0" selection-start="3028" selection-end="3028" vertical-scroll-proportion="0.0" vertical-offset="1495" max-vertical-offset="3060">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testNetworkgen.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/testNetworkgen.py">
+      <file leaf-file-name="testContextRep.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/testContextRep.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="0" selection-start="591" selection-end="591" vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="1365">
+            <state line="17" column="47" selection-start="454" selection-end="454" vertical-scroll-proportion="0.74127907" vertical-offset="0" max-vertical-offset="450">
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="contextsForOneSimulator.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/contextsForOneSimulator.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="40" selection-start="640" selection-end="640" vertical-scroll-proportion="0.0" vertical-offset="331" max-vertical-offset="675">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="treeGen.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/treeGen.py">
+      <file leaf-file-name="testContextsForOneSimulator.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/testContextsForOneSimulator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="25" selection-start="1485" selection-end="1485" vertical-scroll-proportion="0.0" vertical-offset="735" max-vertical-offset="2730">
-              <folding />
+            <state line="21" column="26" selection-start="562" selection-end="562" vertical-scroll-proportion="0.0" vertical-offset="111" max-vertical-offset="510">
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testContext.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/testContext.py">
+      <file leaf-file-name="database.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/database.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="0" selection-start="77" selection-end="77" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="1200">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="host.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/host.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="158" column="0" selection-start="5328" selection-end="5328" vertical-scroll-proportion="0.0" vertical-offset="2370" max-vertical-offset="2880">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="network.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/network.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="162" column="0" selection-start="4683" selection-end="4683" vertical-scroll-proportion="0.0" vertical-offset="2430" max-vertical-offset="3915">
-              <folding />
+            <state line="8" column="0" selection-start="84" selection-end="600" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="795">
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -156,13 +176,20 @@
         <option value="$PROJECT_DIR$/src/networkgen.py" />
         <option value="$PROJECT_DIR$/src/analyzer.py" />
         <option value="$PROJECT_DIR$/massSimulate.py" />
+        <option value="$PROJECT_DIR$/src/context.py" />
+        <option value="$PROJECT_DIR$/src/ContextsForOneSimulator.py" />
+        <option value="$PROJECT_DIR$/src/host.py" />
+        <option value="$PROJECT_DIR$/src/contextsForOneSimulator.py" />
+        <option value="$PROJECT_DIR$/test/testContextsForOneSimulator.py" />
+        <option value="$PROJECT_DIR$/src/ContextRep.py" />
+        <option value="$PROJECT_DIR$/test/testContextRep.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="725" />
-    <option name="y" value="159" />
-    <option name="width" value="1179" />
+    <option name="x" value="17" />
+    <option name="y" value="67" />
+    <option name="width" value="1277" />
     <option name="height" value="763" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -191,6 +218,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -209,19 +237,46 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aggregator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aggregator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aggregator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aggregator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="editor" />
+    <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -232,26 +287,12 @@
       </console-settings>
     </option>
   </component>
-  <component name="RunManager" selected="Python.massSimulate">
-    <configuration default="false" name="codesize" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="aggregator" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/codesize.py" />
-      <option name="PARAMETERS" value="" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python tests.Unittests in testContextRep">
     <configuration default="false" name="generateGraph" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -294,7 +335,26 @@
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittests in tupleProcessorTest" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="contextsForOneSimulator" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="aggregator" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/contextsForOneSimulator.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests in testContextsForOneSimulator" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -305,7 +365,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="aggregator" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/tupleProcessorTest.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/testContextsForOneSimulator.py" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
       <option name="FOLDER_NAME" value="" />
@@ -319,7 +379,7 @@
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittests in testNetworkgen" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Unittests in testContextRep" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -330,7 +390,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="aggregator" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/testNetworkgen.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/testContextRep.py" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
       <option name="FOLDER_NAME" value="" />
@@ -344,26 +404,6 @@
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PyDebugRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
-    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="aggregator" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="TARGET" value="" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="py.test">
@@ -453,9 +493,6 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
-      <method />
-    </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -519,19 +556,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.testTreeGen" />
-      <item index="1" class="java.lang.String" itemvalue="Python.codesize" />
-      <item index="2" class="java.lang.String" itemvalue="Python.generateGraph" />
-      <item index="3" class="java.lang.String" itemvalue="Python.massSimulate" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in tupleProcessorTest" />
-      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittests in testNetworkgen" />
+      <item index="1" class="java.lang.String" itemvalue="Python.generateGraph" />
+      <item index="2" class="java.lang.String" itemvalue="Python.massSimulate" />
+      <item index="3" class="java.lang.String" itemvalue="Python.contextsForOneSimulator" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in testContextsForOneSimulator" />
+      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittests in testContextRep" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.massSimulate" />
-        <item index="1" class="java.lang.String" itemvalue="Python.generateGraph" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in testNetworkgen" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in tupleProcessorTest" />
-        <item index="4" class="java.lang.String" itemvalue="Python.codesize" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in testContextRep" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in testContextsForOneSimulator" />
+        <item index="2" class="java.lang.String" itemvalue="Python.contextsForOneSimulator" />
+        <item index="3" class="java.lang.String" itemvalue="Python.massSimulate" />
+        <item index="4" class="java.lang.String" itemvalue="Python.generateGraph" />
       </list>
     </recent_temporary>
   </component>
@@ -562,28 +599,33 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="725" y="159" width="1179" height="763" extended-state="0" />
+    <frame x="17" y="67" width="1277" height="763" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33863637" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3268945" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25306416" sideWeight="0.67620134" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22859664" sideWeight="0.62830484" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3233945" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21417198" sideWeight="0.62830484" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32248062" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3716952" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3875969" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32798165" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -607,40 +649,62 @@
           <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="15" />
+      <option name="time" value="16" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/random.py">
+    <entry file="file://$PROJECT_DIR$/generateGraphs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="184" column="0" selection-start="6721" selection-end="6721" vertical-scroll-proportion="0.0" vertical-offset="2513" max-vertical-offset="13545" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/testTreeGen.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="0" selection-start="1041" selection-end="1041" vertical-scroll-proportion="0.0" vertical-offset="309" max-vertical-offset="1110" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simulate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="36" selection-start="869" selection-end="869" vertical-scroll-proportion="0.0" vertical-offset="155" max-vertical-offset="1260" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tupleProcessor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="44" selection-start="762" selection-end="762" vertical-scroll-proportion="0.0" vertical-offset="262" max-vertical-offset="945">
+        <state line="29" column="0" selection-start="958" selection-end="958" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2685">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/codesize.py">
+    <entry file="file://$PROJECT_DIR$/massSimulate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1650" />
+        <state line="63" column="0" selection-start="1688" selection-end="1688" vertical-scroll-proportion="0.0" vertical-offset="945" max-vertical-offset="2160">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/testValue.py">
+    <entry file="file://$PROJECT_DIR$/src/analyzer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="7" selection-start="0" selection-end="895" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
+        <state line="57" column="26" selection-start="1973" selection-end="1973" vertical-scroll-proportion="0.0" vertical-offset="855" max-vertical-offset="3135">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/networkgen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="97" selection-start="2472" selection-end="2472" vertical-scroll-proportion="0.0" vertical-offset="976" max-vertical-offset="1845">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aggregationExceptions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/testNetworkgen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="0" selection-start="591" selection-end="591" vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="1365">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/treeGen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="25" selection-start="1484" selection-end="1484" vertical-scroll-proportion="0.0" vertical-offset="720" max-vertical-offset="2730">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/testContext.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="77" selection-end="77" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="1200">
           <folding />
         </state>
       </provider>
@@ -652,11 +716,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/testContext.py">
+    <entry file="file://$PROJECT_DIR$/src/network.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="77" selection-end="77" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1200">
+        <state line="162" column="0" selection-start="4683" selection-end="4683" vertical-scroll-proportion="0.0" vertical-offset="2430" max-vertical-offset="3915">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/random.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="184" column="0" selection-start="6721" selection-end="6721" vertical-scroll-proportion="0.0" vertical-offset="2513" max-vertical-offset="13545" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/testTreeGen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="0" selection-start="1041" selection-end="1041" vertical-scroll-proportion="0.0" vertical-offset="309" max-vertical-offset="1110" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codesize.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1650" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/testValue.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="7" selection-start="0" selection-end="895" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/aggregationExceptions.py">
@@ -682,36 +766,137 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/generateGraphs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="970" selection-end="970" vertical-scroll-proportion="0.0" vertical-offset="256" max-vertical-offset="1860">
+        <state line="29" column="0" selection-start="958" selection-end="958" vertical-scroll-proportion="0.0" vertical-offset="256" max-vertical-offset="2685">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/treeGen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="25" selection-start="1485" selection-end="1485" vertical-scroll-proportion="0.0" vertical-offset="481" max-vertical-offset="2700">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/network.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="162" column="0" selection-start="4683" selection-end="4683" vertical-scroll-proportion="0.0" vertical-offset="2146" max-vertical-offset="3810">
+        <state line="48" column="25" selection-start="1484" selection-end="1484" vertical-scroll-proportion="0.0" vertical-offset="720" max-vertical-offset="2730">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/analyzer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="26" selection-start="1973" selection-end="1973" vertical-scroll-proportion="66.34615" vertical-offset="2535" max-vertical-offset="3090">
+        <state line="57" column="26" selection-start="1973" selection-end="1973" vertical-scroll-proportion="0.0" vertical-offset="855" max-vertical-offset="3135">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/massSimulate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="14" selection-start="3285" selection-end="3285" vertical-scroll-proportion="0.22222222" vertical-offset="1545" max-vertical-offset="2100">
+        <state line="47" column="0" selection-start="1104" selection-end="1104" vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="2160">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/testHost.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="8" selection-start="866" selection-end="866" vertical-scroll-proportion="0.0" vertical-offset="645" max-vertical-offset="1605">
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/testContext.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="19" selection-start="557" selection-end="564" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="1185">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/context.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="87" column="20" selection-start="2270" selection-end="2270" vertical-scroll-proportion="0.0" vertical-offset="543" max-vertical-offset="1545">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/value.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tupleProcessor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="44" selection-start="762" selection-end="762" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="945">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simulate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="14" selection-start="839" selection-end="847" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="1335">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/network.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="212" column="35" selection-start="6639" selection-end="6639" vertical-scroll-proportion="0.0" vertical-offset="2941" max-vertical-offset="3810">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="84" selection-end="600" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="795">
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/contextsForOneSimulator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="40" selection-start="640" selection-end="640" vertical-scroll-proportion="0.0" vertical-offset="331" max-vertical-offset="675">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/host.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="183" column="61" selection-start="6233" selection-end="6233" vertical-scroll-proportion="-1.0930233" vertical-offset="3016" max-vertical-offset="3360">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/testContextsForOneSimulator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="26" selection-start="562" selection-end="562" vertical-scroll-proportion="0.0" vertical-offset="156" max-vertical-offset="510">
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="108" column="0" selection-start="3028" selection-end="3028" vertical-scroll-proportion="0.0" vertical-offset="1495" max-vertical-offset="3060">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ContextRep.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="642" selection-end="642" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="720">
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/testContextRep.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="47" selection-start="454" selection-end="454" vertical-scroll-proportion="0.74127907" vertical-offset="0" max-vertical-offset="450">
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

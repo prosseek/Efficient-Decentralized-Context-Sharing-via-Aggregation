@@ -1,19 +1,14 @@
-1:66(66) -> (g(0):c(66))
-2:394(460) -> (g(0):c(394))
-3:34(494) -> (g(0):c(34))
+1:8(8) -> (g(0):c(8))
+2:8(16) -> (g(0):c(8))
 Accuracy: total
-STEP: 1 -> AVG 76.00%
+STEP: 1 -> AVG 75.00%
 STEP: 2 -> AVG 100.00%
-STEP: 3 -> AVG 100.00%
 Accuracy: agg
-STEP: 1 -> AVG 76.00%
+STEP: 1 -> AVG 75.00%
 STEP: 2 -> AVG 100.00%
-STEP: 3 -> AVG 100.00%
 Accuracy: single
-STEP: 1 -> AVG 76.00%
+STEP: 1 -> AVG 75.00%
 STEP: 2 -> AVG 100.00%
-STEP: 3 -> AVG 100.00%
 Accuracy: cohorts
 STEP: 1 -> COHORTS number(0), total member size(0), average member in cohort ( 0.00)
 STEP: 2 -> COHORTS number(0), total member size(0), average member in cohort ( 0.00)
-STEP: 3 -> COHORTS number(0), total member size(0), average member in cohort ( 0.00)

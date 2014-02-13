@@ -11,11 +11,14 @@ from demerge import *
 from merge import *
 from selection import *
 from copy import *
+from contextsForOneSimulator import *
 
 DEBUG = True
 
 class Host(object):
     def __init__(self, i, neighbors = None): #, analyzer = None):
+        # singleton that is shared by all the hosts
+        self.contextsDictionary = getContextsForOneSimulator()
         self.id = i
         #self.neighbors = neighbors
         self.neighbors = [] if neighbors is None else neighbors
@@ -77,14 +80,18 @@ class Host(object):
             self.samples = [11, 12, 13]
         
     def sample(self, time = -1):
-        if time == -1:
-            res = self.samples[self.sampleTime]
-            self.sampleTime += 1
-            return res
-        else:
-            assert len(self.samples) > time
-            return self.samples[time]
-        
+        try:
+            if time == -1:
+                res = self.samples[self.sampleTime]
+                self.sampleTime += 1
+                return res
+            else:
+                assert len(self.samples) > time
+                return self.samples[time]
+        except Exception:
+            # If anything bad happens, just use the id for the sampling data
+            return self.id
+
     #def resetContexts(self):
         #self.sendContexts = set()
         
@@ -99,7 +106,10 @@ class Host(object):
         
     def getNeighbors(self):
         return self.neighbors
-        
+
+    def addToNeighbor(self, n):
+        self.neighbors.append(n)
+
     def setNeighbors(self, n):
         self.neighbors = n
         
@@ -149,8 +159,10 @@ class Host(object):
         selection = Selection(**param)
         self.outputDictionary = selection.run(s)
         self.sentHistory.addDictionary(self.outputDictionary)
-        
-            #print self.outputDictionary
+
+        #print "Inside host#generateContext host(%d) timestep(%d)" % (self.id, timeStep)
+        #print self.outputDictionary
+
         return self.__str__()
         
     def sendContextsToNeighbor(self, n, printFlag = True):
@@ -159,7 +171,19 @@ class Host(object):
         contexts = self.outputDictionary[n]
         #print contexts
         host.receiveContexts(self.id, contexts, printFlag)
-    
+
+    def _sendContexts(self, n):
+        """
+        This method is for ONE Simulation
+        """
+        contexts = self.outputDictionary[n]
+        self.contextsDictionary.sendContexts(self.id, n, contexts)
+
+    def _receiveContexts(self, n):
+        sender = n
+        contexts = self.contextsDictionary.receiveContexts(n)
+        self.receiveContexts(sender, contexts)
+
     def sendContextsToNeighbors(self, printFlag = True):
         assert len(self.neighborDictionary) > 0, "Missing neighborDictionary"
         
@@ -177,7 +201,22 @@ class Host(object):
         if printFlag:
             contextsString = getStringFromList(contexts)
             print "(%d) received Contexts from (%d): %s" % (self.id, sender, contextsString)
-        
+
+    def getContextSizeInOutputDictionary(self, id):
+        """
+        TODO: The actual size of the context depends on the content representation
+        For maximal 500 node -> 500/8 = 63 byte, Double precision data = 8 byte
+        = 8 + 63 = 71 byte for one context
+        """
+        try:
+            contexts = self.outputDictionary[id]
+            #print contexts
+            return 500/8 + 1 + 8
+        except KeyError:
+            print self.outputDictionary
+            print >>sys.stderr, "ID %d is not in outptuDictionary" % id
+            return -1
+
 if __name__ == "__main__":
     import unittest
     sys.path.append("../test")

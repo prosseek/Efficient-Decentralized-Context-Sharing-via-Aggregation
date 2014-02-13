@@ -63,16 +63,22 @@ def runSimulate(inputFile, singleOnly, resultDirectory = "./"):
         a.write(result)
 
 if __name__ == "__main__":    
-    singleOnly = True
-    for i in range(10, 20, 10):
-        inputFile = os.path.join(dataDirectory, "mesh" + str(i) + ".txt")
-        #f = os.path.join(inputFile, outputDirectory)
-        print "PROCESSING: " + inputFile
-        runSimulate(inputFile, True, outputDirectory)
-        runSimulate(inputFile, False, outputDirectory)
-        
-        inputFile = os.path.join(dataDirectory, "tree" + str(i) + ".txt")
-        #f = os.path.join(inputFile, outputDirectory)
-        print "PROCESSING"  + inputFile
-        runSimulate(inputFile, True, outputDirectory)  # single
-        runSimulate(inputFile, False, outputDirectory)  # aggr
+    #singleOnly = True
+    inputFile = "/Users/smcho/code/PycharmProjects/aggregator/data/test_data/square2.txt" # os.path.join(dataDirectory, "mesh" + str(i) + ".txt")
+    print "PROCESSING: " + inputFile
+    runSimulate(inputFile, True, outputDirectory)
+    runSimulate(inputFile, False, outputDirectory)
+    
+    
+    # for i in range(10, 20, 10):
+    #     inputFile = os.path.join(dataDirectory, "mesh" + str(i) + ".txt")
+    #     #f = os.path.join(inputFile, outputDirectory)
+    #     print "PROCESSING: " + inputFile
+    #     runSimulate(inputFile, True, outputDirectory)
+    #     runSimulate(inputFile, False, outputDirectory)
+    #     
+    #     inputFile = os.path.join(dataDirectory, "tree" + str(i) + ".txt")
+    #     #f = os.path.join(inputFile, outputDirectory)
+    #     print "PROCESSING"  + inputFile
+    #     runSimulate(inputFile, True, outputDirectory)  # single
+    #     runSimulate(inputFile, False, outputDirectory)  # aggr
