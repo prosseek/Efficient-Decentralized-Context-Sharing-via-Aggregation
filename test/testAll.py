@@ -44,5 +44,3 @@ if __name__ == "__main__":
     exec(getTestNames())
 
     unittest.TextTestRunner(verbosity=2).run(suite())
-    
-    

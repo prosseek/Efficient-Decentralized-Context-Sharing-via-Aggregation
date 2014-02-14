@@ -110,13 +110,23 @@ class Host(object):
     def addToNeighbor(self, n):
         self.neighbors.append(n)
 
+    def deleteNeighbor(self, n):
+        """
+        remove neighbor 'n' when it's in the neighbors list
+        """
+        try:
+            index = self.neighbors.index(n) # find where is the neighor n
+            del self.neighbors[index]
+        except ValueError:
+            pass
+
     def setNeighbors(self, n):
         self.neighbors = n
         
     def setNeighborDictionary(self, neighborDictionary):
         self.neighborDictionary = neighborDictionary
         
-    def generateContext(self, timeStep, sampleIndex = 0, printFlag = False, s = False):
+    def generateContext(self, timeStep = 1, sampleIndex = 0, printFlag = False, s = False):
         """Generate contexts and store them in contexts list
     
         We don't use printFlag now, but it will be used sooner or later for debugging. 
@@ -165,7 +175,7 @@ class Host(object):
 
         return self.__str__()
         
-    def sendContextsToNeighbor(self, n, printFlag = True):
+    def sendContextsToNeighbor(self, n, printFlag = False):
         #print n
         host = self.neighborDictionary[n]
         contexts = self.outputDictionary[n]
@@ -183,8 +193,9 @@ class Host(object):
         sender = n
         contexts = self.contextsDictionary.receiveContexts(n)
         self.receiveContexts(sender, contexts)
+        #print self
 
-    def sendContextsToNeighbors(self, printFlag = True):
+    def sendContextsToNeighbors(self, printFlag = False):
         assert len(self.neighborDictionary) > 0, "Missing neighborDictionary"
         
         # get neighbor object
@@ -193,7 +204,7 @@ class Host(object):
         for n in self.neighbors:
             self.sendContextsToNeighbor(n, printFlag)
     
-    def receiveContexts(self, sender, contexts, printFlag = True):
+    def receiveContexts(self, sender, contexts, printFlag = False):
         assert type(contexts) in [list, set]
         context = increaseHopcount(contexts)
         self.currentInputDictionary[sender] = contexts
@@ -211,7 +222,10 @@ class Host(object):
         try:
             contexts = self.outputDictionary[id]
             #print contexts
-            return 500/8 + 1 + 8
+            if contexts:
+                return 500/8 + 1 + 8
+            else:
+                return -1
         except KeyError:
             print self.outputDictionary
             print >>sys.stderr, "ID %d is not in outptuDictionary" % id
