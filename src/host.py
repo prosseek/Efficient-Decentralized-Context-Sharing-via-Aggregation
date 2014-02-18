@@ -125,13 +125,21 @@ class Host(object):
         
     def setNeighborDictionary(self, neighborDictionary):
         self.neighborDictionary = neighborDictionary
-        
-    def generateContext(self, timeStep = 1, sampleIndex = 0, printFlag = False, s = False):
+
+    # For Jython interface
+    def generateSingleContext(self, value, timeStep = 0):
+        return self.generateContext(timeStep, value)
+
+    def generateContext(self, timeStep = 1, sampleValue = None, printFlag = False, s = False):
         """Generate contexts and store them in contexts list
     
         We don't use printFlag now, but it will be used sooner or later for debugging. 
         """
-        self.sampledValue = self.sample(0)
+
+        if sampleValue is not None:
+            self.sampledValue = sampleValue
+        else:
+            self.sampledValue = self.sample(0)
         param = {"id":self.getId(),
                  "value":self.sampledValue,
                  "timeStamp":timeStep,
@@ -170,8 +178,8 @@ class Host(object):
         self.outputDictionary = selection.run(s)
         self.sentHistory.addDictionary(self.outputDictionary)
 
-        #print "Inside host#generateContext host(%d) timestep(%d)" % (self.id, timeStep)
-        #print self.outputDictionary
+        print "Inside host#generateContext host(%d) timestep(%d)" % (self.id, timeStep)
+        print self.outputDictionary
 
         return self.__str__()
         
