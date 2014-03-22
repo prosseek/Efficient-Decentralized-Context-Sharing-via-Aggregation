@@ -21,6 +21,7 @@ graph graphname {
     %s
 }
 """
+
 SIMULATION_END = 10
 
 #PRINT_RESULT = None # You control PRINT_RESULT with PrintCount
@@ -148,11 +149,31 @@ class Network(object):
             
         return self.hostDict
                 
-    def simulate(self, sampleFile, endCount = None):
+    def simulate(self, sampleFile, simulationSetup = None): #endCount = None):
         # smcho
         # this should be majorly over-hauled 
         #return
         # preprocessing
+
+        endCount = None
+        connectionBrokenRate = 0.0
+        missingDataRate = 0.0
+
+        if simulationSetup is not None:
+            if "endCount" in simulationSetup:
+                endCount = simulationSetup["endCount"]
+            if "connectionBrokenRate" in simulationSetup:
+                val = simulationSetup["connectionBrokenRate"]
+                if val is not None:
+                    connectionBrokenRate = val
+            if "missingDataRate" in simulationSetup:
+                val = simulationSetup["missingDataRate"]
+                if val is not None:
+                    missingDataRate = val
+
+        assert 0.0 <= connectionBrokenRate <= 1.0, 'connectionBrokenRate is %d' % connectionBrokenRate
+        assert 0.0 <= missingDataRate <= 1.0, 'missingDataRate is %d' % missingDataRate
+
         for obj in self.hostDict.values():
             #print obj.getId()
             #print sampleFile

@@ -1,5 +1,21 @@
 import sys
 import re
+import random
+
+def truefalse(percentage):
+    """Returns true or false based on the input.
+
+    Given percentage in double data format, this function
+    returns true with the probability given as an input.
+    For example, when percentage == 0.1 (10%), this function returns true with the
+    probability of 10.
+
+    For seed() method, parameter is not needed.
+    http://stackoverflow.com/questions/1703012/what-is-suggested-seed-value-to-use-with-random-seed
+    """
+    random.seed()
+    r = random.random()
+    return r < percentage
 
 def printAccuracy(dictionary):
     assert type(dictionary) is dict

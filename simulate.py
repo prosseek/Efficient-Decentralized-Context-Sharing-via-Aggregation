@@ -26,7 +26,12 @@ def runSimulate(inputFile, singleOnly, resultDirectory = "./"):
     n.dotGen(dotFile)
 
     Network.printStep = range(0,0)
-    n.simulate(getSampleFile(), 100)
+    simulationSetup = {
+        "endCount":100,
+        "connectionBrokenRate":None,
+        "missingDataRate":None}
+
+    n.simulate(getSampleFile(), simulationSetup)
     a = n.analyzer
 
     print "Size: based on the steps"

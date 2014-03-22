@@ -26,6 +26,8 @@ class Host(object):
         self.sampledValue = None
         self.samples = None
         self.sampleTime = 0
+        self.drop_failure_count = 0
+        self.drop_success_count = 0
         
         self.db = Database()
         self.currentInputDictionary = {}
@@ -140,6 +142,7 @@ class Host(object):
             self.sampledValue = sampleValue
         else:
             self.sampledValue = self.sample(0)
+
         param = {"id":self.getId(),
                  "value":self.sampledValue,
                  "timeStamp":timeStep,
@@ -178,8 +181,8 @@ class Host(object):
         self.outputDictionary = selection.run(s)
         self.sentHistory.addDictionary(self.outputDictionary)
 
-        print "Inside host#generateContext host(%d) timestep(%d)" % (self.id, timeStep)
-        print self.outputDictionary
+        # print "Inside host#generateContext host(%d) timestep(%d)" % (self.id, timeStep)
+        # print self.outputDictionary
 
         return self.__str__()
         
@@ -203,14 +206,21 @@ class Host(object):
         self.receiveContexts(sender, contexts)
         #print self
 
-    def sendContextsToNeighbors(self, printFlag = False):
+    def sendContextsToNeighbors(self, dropRate=0.0, printFlag=False):
         assert len(self.neighborDictionary) > 0, "Missing neighborDictionary"
         
         # get neighbor object
         #print printFlag
         #for host, nobject in self.neighborDictionary.items():
         for n in self.neighbors:
-            self.sendContextsToNeighbor(n, printFlag)
+            # truefalse() returns true based on the input.
+            # We think in terms of droprate, which has (1 - droprate) relationship
+            # with the input of truefalse().
+            if truefalse(1 - dropRate):
+                self.drop_success_count += 1
+                self.sendContextsToNeighbor(n, printFlag)
+            else:
+                self.drop_failure_count += 1
     
     def receiveContexts(self, sender, contexts, printFlag = False):
         assert type(contexts) in [list, set]

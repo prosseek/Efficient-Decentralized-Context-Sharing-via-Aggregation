@@ -12,7 +12,7 @@ DEBUG = False
 class TestHost(unittest.TestCase):
     def setUp(self):
         pass
-        
+
     def atest_readFromSampleDataFile_sample(self):
         """TODO: enable this test
         """
@@ -63,7 +63,7 @@ class TestHost(unittest.TestCase):
         h1.outputDictionary[2] = c #h1.setContexts(c)
         h1.outputDictionary[3] = c
 
-        h1.sendContextsToNeighbors(printFlag = DEBUG)
+        h1.sendContextsToNeighbors(printFlag=DEBUG)
         
         #print h3.receivedContexts
         result1 = h2.currentInputDictionary[1]

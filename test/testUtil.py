@@ -18,7 +18,19 @@ f = Context('f', 60)
 class TestUtil(unittest.TestCase):
     def setUp(self):
         pass
-        
+
+    def test_truefalse(self):
+        result = []
+        percentage = 0.3
+        totalLength = 1000
+        for i in range(totalLength):
+            result.append(truefalse(percentage))
+
+        #print result
+        count = len(filter(lambda x: x, result))
+        result = 100.0*count/totalLength
+        self.assertTrue(result < 34)
+
     def test_sameDictionary(self):
         d1 = {1:[1,2,3], 2:[2,3,4], 3:[1,2,5]}
         d2 = deepcopy(d1)

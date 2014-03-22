@@ -38,7 +38,9 @@ class TestAnalyzer(unittest.TestCase):
         """
         TODO - broken test here
         """
-        self.n.simulate(self.simulationFilePath, 100)
+        simulationSetup = {
+            "endCount":100}
+        self.n.simulate(self.simulationFilePath, simulationSetup)
         a = self.n.analyzer
         res = a.getProgress(1)
         #print res
@@ -81,14 +83,22 @@ DB:Single:[(1)(2)(3)(4)(5)(6)(7)]
         self.assertEqual(result, 3)
         
     def test_showSize(self):
-        self.n.simulate(self.simulationFilePath, 100)
+        simulationSetup = {
+            "endCount":100,
+            "connectionBrokenRate":None,
+            "missingDataRate":None}
+        self.n.simulate(self.simulationFilePath, simulationSetup)
+
         a = self.n.analyzer
         res, size = a.getSize()
         self.assertTrue(size == 56)
+        #print "???"
         
     def test_showAccuracy(self):
         Network.s = True
-        self.n.simulate(self.simulationFilePath, 100)
+        simulationSetup = {
+            "endCount":100}
+        self.n.simulate(self.simulationFilePath, simulationSetup)
         a = self.n.analyzer
         ressTotal, res, resSingle, resCohorts = a.getAccuracy()
         self.assertTrue(len(res) == 5)
@@ -106,7 +116,10 @@ DB:Single:[(1)(2)(3)(4)(5)(6)(7)]
         
     def test_showAccuracy2(self):
         Network.s = False
-        self.n.simulate(self.simulationFilePath, 100)
+
+        simulationSetup = {
+            "endCount":100}
+        self.n.simulate(self.simulationFilePath, simulationSetup)
         a = self.n.analyzer
         resTotal, res, resSingle, resCohorts = a.getAccuracy()
         #print resCohorts
@@ -131,7 +144,10 @@ DB:Single:[(1)(2)(3)(4)(5)(6)(7)]
         n = Network(filePath)
         simulationFilePath = "./testFile/sample.txt"
         simulationFilePath = findCorrectTestFile(simulationFilePath)
-        n.simulate(self.simulationFilePath, 100)
+
+        simulationSetup = {
+            "endCount":100}
+        n.simulate(self.simulationFilePath, simulationSetup)
         a = self.n.analyzer
         ressTotal, res2, resSingle2, resCohorts2 = a.getAccuracy()
         self.assertTrue(res == res2)
@@ -147,8 +163,13 @@ DB:Single:[(1)(2)(3)(4)(5)(6)(7)]
         single = single
         filePath = findCorrectTestFile(filePath)
         n = Network(filePath)
-        Network.s = single 
-        n.simulate(self.simulationFilePath, 100)
+        Network.s = single
+
+        simulationSetup = {
+            "endCount":100,
+            "connectionBrokenRate":None,
+            "missingDataRate":None}
+        n.simulate(self.simulationFilePath, simulationSetup)
         a = n.analyzer
         resultTotal, result, resultSingle, resultCohorts = a.getAccuracy()
         

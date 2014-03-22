@@ -1,6 +1,14 @@
 import platform
 import os.path
 
+def get_testFile_directory():
+    s = platform.system()
+
+    if s == "Darwin":
+        return "/Users/smcho/code/PycharmProjects/aggregator/test/testFile"
+    elif s == "Linux":
+        assert False, "Setup Linux configuration"
+
 def return_darwin_linux(darwin, linux):
     s = platform.system()
 
@@ -31,7 +39,8 @@ def getDataDirectory():
     return os.path.join(getTestDirectory(), "data")
     
 def getSampleFile():
-    darwin = "./test/testFile/sample.txt"
+    darwin = os.path.join(get_testFile_directory(), "sample.txt")
+    darwin = os.path.abspath(darwin)
     return return_darwin_linux(darwin, darwin)
     
 if __name__ == "__main__":

@@ -12,7 +12,11 @@ from sentHistory import *
 DEBUG = False
 
 class Selection(object):
-    def __init__(self, inputDictionary = None, currentInputDictionary = None, outputBuffer = None, oldOutputBuffer = None, sentHistory = None, neighbors = None):
+    def __init__(self, 
+            inputDictionary = None, currentInputDictionary = None, 
+            outputBuffer = None, oldOutputBuffer = None, 
+            sentHistory = None, neighbors = None):
+        
         self.inputDictionary = inputDictionary
         self.currentInputDictionary = currentInputDictionary
         self.outputBuffer = outputBuffer
