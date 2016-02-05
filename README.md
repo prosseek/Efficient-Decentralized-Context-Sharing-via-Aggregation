@@ -1,7 +1,1 @@
-##Aggregation
-Snapshot with inference
-
-### Setup
-
-1. The test files are needed to be setup.
-	1. Setup configuration.py 	
+This github is for code implementation of my paper: [Efficient Decentralized Context Sharing via Smart Aggregation](https://www.researchgate.net/publication/282380786_Efficient_Decentralized_Context_Sharing_via_Smart_Aggregation)
